@@ -12,6 +12,10 @@
 
 Use DSU when variables belong to connected components and each edge gives a multiplicative ratio like `a / b = value`.
 
+## Brief Problem Statement
+
+You are given equations such as `a / b = 2.0` and `b / c = 3.0`, then asked queries like `a / c` or `c / a`. Return the derived ratio when both variables belong to the same connected component; otherwise return `-1.0`.
+
 ## Recognition Pattern
 
 - Variables are connected by equations or ratios.
