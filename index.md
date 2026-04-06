@@ -4,8 +4,8 @@
 
 - Raw Anki entries represented: 247
 - Unique problem notes in repo: 244
-- Tier 1: 8 curated full-solution notes
-- Tier 2: 236 notes
+- Tier 1: 9 curated full-solution notes
+- Tier 2: 235 notes
 - Some overlapping Anki prompts are intentionally merged into the same canonical note when they cover the same problem.
 
 ## Tier 1 Problems
@@ -20,6 +20,7 @@
 | [Number of Islands](problems/number-of-islands.md) | Graph / Matrix | DFS flood fill | New |
 | [Combination Sum](problems/combination-sum.md) | Backtracking | Choose-explore-unchoose | New |
 | [Validate Binary Search Tree](problems/validate-binary-search-tree.md) | Trees / BST | DFS with bounds | New |
+| [Weighted DSU for Ratio Problems](problems/weighted-dsu-work-for-ratio-problems.md) | DSU | Weighted DSU / Ratios | New |
 
 ## Tier 2 Core Problems
 
