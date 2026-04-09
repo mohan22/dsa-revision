@@ -4,8 +4,8 @@
 
 - Raw Anki entries represented: 247
 - Unique problem notes in repo: 244
-- Tier 1: 10 curated full-solution notes
-- Tier 2: 234 notes
+- Tier 1: 11 curated full-solution notes
+- Tier 2: 233 notes
 - Some overlapping Anki prompts are intentionally merged into the same canonical note when they cover the same problem.
 
 ## Tier 1 Problems
@@ -22,6 +22,7 @@
 | [Validate Binary Search Tree](problems/validate-binary-search-tree.md) | Trees / BST | DFS with bounds | New |
 | [Weighted DSU for Ratio Problems](problems/weighted-dsu-work-for-ratio-problems.md) | DSU | Weighted DSU / Ratios | New |
 | [DSU Method for Redundant Connection](problems/dsu-method-for-redundant-connection.md) | DSU | DSU / Cycle detection | New |
+| [Union-by-Rank/Size Improves DSU](problems/union-by-rank-size-improve-dsu.md) | DSU | DSU / Rank-size optimization | New |
 
 ## Tier 2 Core Problems
 

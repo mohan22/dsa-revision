@@ -1,63 +1,133 @@
-# Problem: Union-by-rank/size improve DSU
+# Problem: Union-by-Rank/Size Improves DSU
 
 ## Source
-- Platform: Anki deck seed
+- Platform: DSU concept / implementation pattern
 - Topic: DSU
-- Tags: DSU, Rank, Day22
-- Difficulty: Not labeled
+- Tags: DSU, Rank
+- Difficulty: Core Pattern
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
 ## Problem Cue
 
-How does union-by-rank/size improve DSU
+Use union-by-rank or union-by-size when implementing DSU so repeated unions do not create tall trees.
+
+## Brief Problem Statement
+
+You are implementing Disjoint Set Union with repeated `find` and `union` operations. Improve the DSU so the internal trees stay shallow, making future operations faster.
 
 ## Recognition Pattern
 
-- Topic signal: DSU
-- Pattern hint from tags: DSU / Rank
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- DSU / Union-Find implementation detail
+- Many union operations over time
+- Performance depends on keeping component trees shallow
+- Usually paired with path compression
+
+## Brute Force Thought
+
+Always attach one root to the other without considering tree shape.
+
+Why it is too slow:
+- can create tall chains
+- makes `find` slower before path compression has enough effect
+- performance degrades on adversarial union order
 
 ## Core Insight
 
-Attach smaller tree under larger one: if rank[x] < rank[y]: parent[x]=y elif rank[y] < rank[x]: parent[y]=x else: parent[y]=x; rank[x]+=1 Prevents height growth.
+When merging two components, attach the smaller or shallower tree under the larger or deeper one. That prevents unnecessary height growth and keeps `find` operations fast.
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Each node starts as its own parent.
+2. Track either:
+   - `rank`: approximate tree height, or
+   - `size`: number of nodes in the component
+3. On `union(x, y)`:
+   - find both roots
+   - if roots match, do nothing
+   - otherwise attach the lower-rank tree under the higher-rank tree
+   - if ranks are equal, choose one root and increment its rank
+4. Combine this with path compression inside `find` for near-constant amortized time.
 
 ## Thought Process During Solving
 
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
+1. What makes naive DSU slow? Tall parent chains.
+2. What should union try to avoid? Increasing tree height unnecessarily.
+3. What metadata helps me choose the better root? Rank or size.
+4. Why is this usually taught with path compression? The two optimizations work together.
+5. What is the key invariant? Parents always form rooted trees, and smaller/shallower trees get attached underneath larger/deeper ones.
 
-## Java Skeleton
+## Java Solution
 ```java
-class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+class DSU {
+    private final int[] parent;
+    private final int[] rank;
+
+    DSU(int n) {
+        parent = new int[n];
+        rank = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+        }
+    }
+
+    int find(int x) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);
+        }
+        return parent[x];
+    }
+
+    boolean union(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+
+        if (rootX == rootY) {
+            return false;
+        }
+
+        if (rank[rootX] < rank[rootY]) {
+            parent[rootX] = rootY;
+        } else if (rank[rootX] > rank[rootY]) {
+            parent[rootY] = rootX;
+        } else {
+            parent[rootY] = rootX;
+            rank[rootX]++;
+        }
+
+        return true;
     }
 }
 ```
 
 ## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+- Time: Near `O(alpha(n))` amortized per operation when combined with path compression
+- Space: `O(n)`
 
 ## Edge Cases / Traps
 
-- Check boundary conditions, duplicates, and empty input.
-- Verify the invariant or state after each update.
-- Confirm whether recursion, heap ordering, or index movement can fail.
+- Do not compare raw nodes; compare their roots
+- Only increase rank when both ranks are equal
+- Rank is not the exact current height after path compression, and that is fine
+- If using size instead of rank, remember to update the new root's size after union
 
-## Promotion Checklist
+## Why This Works
 
-- Add a full Java solution.
-- Add exact time and space complexity.
-- Add one short brute-force vs optimized comparison.
-- Add 2-3 problem-specific traps.
+Union-by-rank/size limits how quickly tree height can grow. Instead of arbitrarily attaching one root under another, it makes the structurally safer choice each time. Combined with path compression, this keeps DSU operations extremely fast in practice and near-constant amortized in theory.
+
+## Interview Explanation
+
+A naive DSU can become a long chain if unions happen in a bad order. Union-by-rank or size fixes that by always attaching the smaller or shallower tree under the larger or deeper one. That keeps trees flat, and when path compression is added on top, `find` and `union` become almost constant time amortized.
+
+## Similar Problems
+
+- Union-Find Basics
+- Weighted DSU for Ratio Problems
+- DSU Method for Redundant Connection
+
+## Anki Recall Prompts
+
+- Why does naive union make DSU slower?
+- When do we increment rank?
+- Why are union-by-rank and path compression usually taught together?
