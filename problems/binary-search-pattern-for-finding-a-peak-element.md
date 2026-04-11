@@ -12,6 +12,11 @@
 
 What is the binary search pattern for finding a peak element
 
+
+## Brief Problem Statement
+
+Identify the core idea behind binary search pattern for finding a peak element and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

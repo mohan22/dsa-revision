@@ -12,6 +12,11 @@
 
 What is the DSU pattern for Kruskal MST
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DSU pattern for Kruskal MST and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: DSU

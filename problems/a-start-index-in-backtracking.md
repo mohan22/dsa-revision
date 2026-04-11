@@ -12,6 +12,11 @@
 
 When do we use a 'start index' in backtracking
 
+
+## Brief Problem Statement
+
+Decide when do we use a 'start index' in backtracking and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

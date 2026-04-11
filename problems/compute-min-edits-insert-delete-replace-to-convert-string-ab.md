@@ -12,6 +12,11 @@
 
 How to compute min edits (insert, delete, replace) to convert string a→b
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute min edits (insert, delete, replace) to convert string a→b.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

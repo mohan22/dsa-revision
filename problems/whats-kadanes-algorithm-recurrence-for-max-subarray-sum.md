@@ -12,6 +12,11 @@
 
 What’s Kadane’s algorithm recurrence for max subarray sum
 
+
+## Brief Problem Statement
+
+Core task: What’s Kadane’s algorithm recurrence for max subarray sum.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

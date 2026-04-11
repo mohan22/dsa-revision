@@ -12,6 +12,11 @@
 
 How to compute maximum depth of a binary tree
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute maximum depth of a binary tree.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

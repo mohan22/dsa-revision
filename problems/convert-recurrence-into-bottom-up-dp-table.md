@@ -12,6 +12,11 @@
 
 How do you convert recurrence into bottom-up DP table
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to convert recurrence into bottom-up DP table.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

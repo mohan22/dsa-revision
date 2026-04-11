@@ -12,6 +12,11 @@
 
 How to find min cost path from top-left to bottom-right in grid
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find min cost path from top-left to bottom-right in grid.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

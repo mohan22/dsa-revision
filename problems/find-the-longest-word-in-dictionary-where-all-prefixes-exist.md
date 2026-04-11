@@ -12,6 +12,11 @@
 
 How to find the longest word in dictionary where all prefixes exist
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the longest word in dictionary where all prefixes exist.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

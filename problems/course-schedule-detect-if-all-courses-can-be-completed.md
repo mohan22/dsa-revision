@@ -12,6 +12,11 @@
 
 How does Course Schedule detect if all courses can be completed
 
+
+## Brief Problem Statement
+
+Understand how to ourse Schedule detect if all courses can be completed.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

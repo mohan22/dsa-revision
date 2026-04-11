@@ -12,6 +12,11 @@
 
 How to check if there exists subarray of size ≥ 2 with sum multiple of k
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if there exists subarray of size ≥ 2 with sum multiple of k.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

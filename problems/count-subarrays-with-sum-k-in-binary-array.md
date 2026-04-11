@@ -12,6 +12,11 @@
 
 How to count subarrays with sum = k in binary array
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count subarrays with sum = k in binary array.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

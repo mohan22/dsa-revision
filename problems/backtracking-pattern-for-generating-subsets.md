@@ -12,6 +12,11 @@
 
 What is the backtracking pattern for generating subsets
 
+
+## Brief Problem Statement
+
+Identify the core idea behind backtracking pattern for generating subsets and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

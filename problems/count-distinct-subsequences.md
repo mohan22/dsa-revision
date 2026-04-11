@@ -12,6 +12,11 @@
 
 How to count distinct subsequences
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count distinct subsequences.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

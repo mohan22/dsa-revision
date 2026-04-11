@@ -12,6 +12,11 @@
 
 What’s the standard binary search algorithm for finding a target in sorted array
 
+
+## Brief Problem Statement
+
+Core task: What’s the standard binary search algorithm for finding a target in sorted array.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

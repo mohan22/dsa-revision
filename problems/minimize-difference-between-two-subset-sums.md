@@ -12,6 +12,11 @@
 
 How to minimize difference between two subset sums
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to minimize difference between two subset sums.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

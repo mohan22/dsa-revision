@@ -12,6 +12,11 @@
 
 How to find the LCS (Longest Common Subsequence) of two strings
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the LCS (Longest Common Subsequence) of two strings.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

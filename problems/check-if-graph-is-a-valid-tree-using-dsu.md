@@ -12,6 +12,11 @@
 
 How to check if graph is a valid tree using DSU
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if graph is a valid tree using DSU.
+
 ## Recognition Pattern
 
 - Topic signal: DSU

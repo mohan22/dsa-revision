@@ -12,6 +12,11 @@
 
 How to find max number of strings that can be formed with given 0s and 1s
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find max number of strings that can be formed with given 0s and 1s.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

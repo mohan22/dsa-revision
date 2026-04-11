@@ -12,6 +12,11 @@
 
 How to check if there exists a subset that sums to target
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if there exists a subset that sums to target.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

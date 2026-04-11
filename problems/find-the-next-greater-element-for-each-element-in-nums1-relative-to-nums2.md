@@ -12,6 +12,11 @@
 
 How to find the next greater element for each element in nums1 relative to nums2
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the next greater element for each element in nums1 relative to nums2.
+
 ## Recognition Pattern
 
 - Topic signal: Stack

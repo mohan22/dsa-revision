@@ -12,6 +12,11 @@
 
 How to check path sum from root to leaf
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check path sum from root to leaf.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

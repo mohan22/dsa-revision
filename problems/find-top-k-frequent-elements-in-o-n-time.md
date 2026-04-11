@@ -12,6 +12,11 @@
 
 How do you find top k frequent elements in O(n) time
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to find top k frequent elements in O(n) time.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

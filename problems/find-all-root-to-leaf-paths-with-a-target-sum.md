@@ -12,6 +12,11 @@
 
 How to find all root-to-leaf paths with a target sum
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find all root-to-leaf paths with a target sum.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

@@ -12,6 +12,11 @@
 
 What conditions indicate a problem should be solved using DP
 
+
+## Brief Problem Statement
+
+Core task: What conditions indicate a problem should be solved using DP.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

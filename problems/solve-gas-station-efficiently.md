@@ -12,6 +12,11 @@
 
 How to solve Gas Station efficiently
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Gas Station efficiently.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

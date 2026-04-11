@@ -12,6 +12,11 @@
 
 How to find cells from which water can flow to both oceans (Pacific Atlantic Water Flow)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find cells from which water can flow to both oceans (Pacific Atlantic Water Flow).
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

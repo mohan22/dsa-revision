@@ -12,6 +12,11 @@
 
 How to solve Last Stone Weight using heap
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Last Stone Weight using heap.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

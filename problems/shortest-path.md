@@ -12,6 +12,11 @@
 
 What is the priority queue pattern in shortest path
 
+
+## Brief Problem Statement
+
+Identify the core idea behind priority queue pattern in shortest path and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

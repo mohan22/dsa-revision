@@ -12,6 +12,11 @@
 
 How to find any peak element in an array
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find any peak element in an array.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

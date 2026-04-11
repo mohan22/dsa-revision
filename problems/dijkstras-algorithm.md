@@ -12,6 +12,11 @@
 
 When should you use Dijkstra’s algorithm
 
+
+## Brief Problem Statement
+
+Decide when should you use Dijkstra’s algorithm and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

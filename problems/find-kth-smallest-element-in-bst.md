@@ -12,6 +12,11 @@
 
 How to find kth smallest element in BST
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find kth smallest element in BST.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

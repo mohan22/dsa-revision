@@ -12,6 +12,11 @@
 
 What pattern is used to compare two trees or check subtree structures
 
+
+## Brief Problem Statement
+
+Core task: What pattern is used to compare two trees or check subtree structures.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

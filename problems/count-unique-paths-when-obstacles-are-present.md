@@ -12,6 +12,11 @@
 
 How to count unique paths when obstacles are present
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count unique paths when obstacles are present.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

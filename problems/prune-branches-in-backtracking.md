@@ -12,6 +12,11 @@
 
 How do you prune branches in backtracking
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to prune branches in backtracking.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

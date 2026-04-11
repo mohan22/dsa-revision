@@ -12,6 +12,11 @@
 
 What is the deque-based pattern for sliding window max
 
+
+## Brief Problem Statement
+
+Identify the core idea behind deque-based pattern for sliding window max and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

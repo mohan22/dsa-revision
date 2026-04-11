@@ -12,6 +12,11 @@
 
 What is the DP pattern for edit distance
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP pattern for edit distance and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

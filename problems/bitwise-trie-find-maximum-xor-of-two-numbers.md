@@ -12,6 +12,11 @@
 
 How does bitwise trie find maximum XOR of two numbers
 
+
+## Brief Problem Statement
+
+Understand how to itwise trie find maximum XOR of two numbers.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

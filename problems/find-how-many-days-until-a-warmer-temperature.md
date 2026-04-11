@@ -12,6 +12,11 @@
 
 How to find how many days until a warmer temperature
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find how many days until a warmer temperature.
+
 ## Recognition Pattern
 
 - Topic signal: Stack

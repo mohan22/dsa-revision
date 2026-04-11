@@ -12,6 +12,11 @@
 
 What is a Trie and why is it used
 
+
+## Brief Problem Statement
+
+Identify what a Trie and why is it used means and when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

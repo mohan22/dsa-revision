@@ -12,6 +12,11 @@
 
 What is the classic binary search template
 
+
+## Brief Problem Statement
+
+Identify the core idea behind classic binary search template and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

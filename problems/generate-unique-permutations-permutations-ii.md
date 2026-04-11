@@ -12,6 +12,11 @@
 
 How to generate unique permutations (Permutations II)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to generate unique permutations (Permutations II).
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

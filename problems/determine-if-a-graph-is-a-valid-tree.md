@@ -12,6 +12,11 @@
 
 How to determine if a graph is a valid tree
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to determine if a graph is a valid tree.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

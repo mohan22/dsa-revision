@@ -12,6 +12,11 @@
 
 How can we use a stack to calculate trapped rain water
 
+
+## Brief Problem Statement
+
+Core task: How can we use a stack to calculate trapped rain water.
+
 ## Recognition Pattern
 
 - Topic signal: Stack

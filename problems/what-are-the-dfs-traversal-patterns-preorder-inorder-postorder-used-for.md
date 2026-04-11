@@ -12,6 +12,11 @@
 
 What are the DFS traversal patterns (preorder, inorder, postorder) used for
 
+
+## Brief Problem Statement
+
+Core task: What are the DFS traversal patterns (preorder, inorder, postorder) used for.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

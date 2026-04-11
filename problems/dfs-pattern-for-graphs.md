@@ -12,6 +12,11 @@
 
 What is the standard DFS pattern for graphs
 
+
+## Brief Problem Statement
+
+Identify the core idea behind standard DFS pattern for graphs and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

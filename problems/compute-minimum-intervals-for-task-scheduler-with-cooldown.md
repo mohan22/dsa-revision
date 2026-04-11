@@ -12,6 +12,11 @@
 
 How to compute minimum intervals for Task Scheduler with cooldown
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute minimum intervals for Task Scheduler with cooldown.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

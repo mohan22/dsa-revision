@@ -12,6 +12,11 @@
 
 Why is 0-1 BFS used for 01 Matrix
 
+
+## Brief Problem Statement
+
+Explain why is 0-1 BFS used for 01 Matrix and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

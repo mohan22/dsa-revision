@@ -12,6 +12,11 @@
 
 What is recursion tree thinking in backtracking
 
+
+## Brief Problem Statement
+
+Identify what recursion tree thinking in backtracking means and when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

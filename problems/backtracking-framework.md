@@ -12,6 +12,11 @@
 
 What is the general backtracking framework
 
+
+## Brief Problem Statement
+
+Identify the core idea behind general backtracking framework and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

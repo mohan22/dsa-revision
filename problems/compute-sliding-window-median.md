@@ -12,6 +12,11 @@
 
 How to compute sliding window median
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute sliding window median.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

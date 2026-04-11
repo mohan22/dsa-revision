@@ -12,6 +12,11 @@
 
 What is the reverse graph technique for Pacific Atlantic Water Flow
 
+
+## Brief Problem Statement
+
+Identify the core idea behind reverse graph technique for Pacific Atlantic Water Flow and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

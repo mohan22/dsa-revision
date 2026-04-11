@@ -12,6 +12,11 @@
 
 What is the DFS/BFS pattern for Number of Islands
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DFS/BFS pattern for Number of Islands and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

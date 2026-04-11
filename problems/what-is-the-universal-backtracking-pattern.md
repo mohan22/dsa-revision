@@ -12,6 +12,11 @@
 
 What is the universal backtracking pattern
 
+
+## Brief Problem Statement
+
+Identify the core idea behind universal backtracking pattern and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

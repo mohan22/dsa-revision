@@ -12,6 +12,11 @@
 
 How does DSU detect cycles in undirected graphs
 
+
+## Brief Problem Statement
+
+Understand how to SU detect cycles in undirected graphs.
+
 ## Recognition Pattern
 
 - Topic signal: DSU

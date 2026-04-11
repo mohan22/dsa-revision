@@ -12,6 +12,11 @@
 
 What is the standard template for insert/search in a Trie
 
+
+## Brief Problem Statement
+
+Identify the core idea behind standard template for insert/search in a Trie and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

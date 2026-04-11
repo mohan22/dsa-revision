@@ -12,6 +12,11 @@
 
 How to find pivot index where left sum == right sum
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find pivot index where left sum == right sum.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

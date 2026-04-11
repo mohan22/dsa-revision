@@ -12,6 +12,11 @@
 
 How do you avoid duplicates in backtracking
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to avoid duplicates in backtracking.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

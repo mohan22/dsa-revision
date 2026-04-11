@@ -12,6 +12,11 @@
 
 How to count number of subsets summing to target
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count number of subsets summing to target.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

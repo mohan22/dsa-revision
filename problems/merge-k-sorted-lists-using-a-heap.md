@@ -12,6 +12,11 @@
 
 How to merge K sorted lists using a heap
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to merge K sorted lists using a heap.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

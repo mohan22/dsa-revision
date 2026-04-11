@@ -12,6 +12,11 @@
 
 How does Combination Sum II avoid duplicates
 
+
+## Brief Problem Statement
+
+Understand how to ombination Sum II avoid duplicates.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

@@ -12,6 +12,11 @@
 
 Find the `k`th largest value without fully sorting the array.
 
+
+## Brief Problem Statement
+
+Find the `k`th largest value without fully sorting the array.
+
 ## Recognition Pattern
 
 - Need only one ranked element

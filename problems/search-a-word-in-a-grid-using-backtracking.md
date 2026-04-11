@@ -12,6 +12,11 @@
 
 How to search a word in a grid using backtracking
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to search a word in a grid using backtracking.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

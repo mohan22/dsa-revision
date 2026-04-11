@@ -12,6 +12,11 @@
 
 Shortest Path in Binary Matrix
 
+
+## Brief Problem Statement
+
+Core task: Shortest Path in Binary Matrix.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

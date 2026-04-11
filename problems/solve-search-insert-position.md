@@ -12,6 +12,11 @@
 
 How to solve Search Insert Position
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Search Insert Position.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

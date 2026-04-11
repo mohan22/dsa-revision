@@ -12,6 +12,11 @@
 
 Maintain connected components under repeated union and connectivity checks.
 
+
+## Brief Problem Statement
+
+Maintain connected components under repeated union and connectivity checks.
+
 ## Recognition Pattern
 
 - Repeated "are these connected?" queries

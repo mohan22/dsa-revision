@@ -12,6 +12,11 @@
 
 How to determine if you can reach the last index (Jump Game)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to determine if you can reach the last index (Jump Game).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

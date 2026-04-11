@@ -12,6 +12,11 @@
 
 How to design a stack that supports retrieving the min element in O(1)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to design a stack that supports retrieving the min element in O(1).
+
 ## Recognition Pattern
 
 - Topic signal: Stack

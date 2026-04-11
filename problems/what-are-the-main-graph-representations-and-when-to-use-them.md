@@ -12,6 +12,11 @@
 
 What are the main graph representations and when to use them
 
+
+## Brief Problem Statement
+
+Core task: What are the main graph representations and when to use them.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

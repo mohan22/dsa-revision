@@ -12,6 +12,11 @@
 
 What is the DP pattern for Longest Palindromic Substring
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP pattern for Longest Palindromic Substring and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

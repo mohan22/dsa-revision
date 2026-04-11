@@ -12,6 +12,11 @@
 
 Pattern for Longest Repeating Character Replacement
 
+
+## Brief Problem Statement
+
+Core task: Pattern for Longest Repeating Character Replacement.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

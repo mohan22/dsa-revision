@@ -12,6 +12,11 @@
 
 How to find two lines that form container with maximum water
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find two lines that form container with maximum water.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

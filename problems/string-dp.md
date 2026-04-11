@@ -12,6 +12,11 @@
 
 What is the general DP table structure for string DP
 
+
+## Brief Problem Statement
+
+Identify the core idea behind general DP table structure for string DP and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

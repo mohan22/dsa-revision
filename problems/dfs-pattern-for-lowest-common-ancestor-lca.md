@@ -12,6 +12,11 @@
 
 What is the DFS pattern for Lowest Common Ancestor (LCA)
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DFS pattern for Lowest Common Ancestor (LCA) and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

@@ -12,6 +12,11 @@
 
 Monotonic deque solution for sliding window max
 
+
+## Brief Problem Statement
+
+Core task: Monotonic deque solution for sliding window max.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

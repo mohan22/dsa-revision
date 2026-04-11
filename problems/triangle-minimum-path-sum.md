@@ -12,6 +12,11 @@
 
 What is the DP pattern for Triangle Minimum Path Sum
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP pattern for Triangle Minimum Path Sum and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

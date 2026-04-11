@@ -12,6 +12,11 @@
 
 How to remove minimum intervals so remaining do not overlap
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to remove minimum intervals so remaining do not overlap.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

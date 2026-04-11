@@ -12,6 +12,11 @@
 
 Why is Koko Eating Bananas a BSOA problem
 
+
+## Brief Problem Statement
+
+Explain why is Koko Eating Bananas a BSOA problem and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

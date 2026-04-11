@@ -12,6 +12,11 @@
 
 What is the Dijkstra pattern for weighted grids
 
+
+## Brief Problem Statement
+
+Identify the core idea behind Dijkstra pattern for weighted grids and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

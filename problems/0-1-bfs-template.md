@@ -12,6 +12,11 @@
 
 What is the 0-1 BFS template
 
+
+## Brief Problem Statement
+
+Identify the core idea behind 0-1 BFS template and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

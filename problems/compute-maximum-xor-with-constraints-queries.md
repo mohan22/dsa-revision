@@ -12,6 +12,11 @@
 
 How to compute maximum XOR with constraints/queries
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute maximum XOR with constraints/queries.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

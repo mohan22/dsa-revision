@@ -12,6 +12,11 @@
 
 When should you use Bellman-Ford
 
+
+## Brief Problem Statement
+
+Decide when should you use Bellman-Ford and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

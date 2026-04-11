@@ -12,6 +12,11 @@
 
 How to find largest connected area of 1’s in grid
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find largest connected area of 1’s in grid.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

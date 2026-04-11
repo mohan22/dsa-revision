@@ -12,6 +12,11 @@
 
 How to find 3 numbers with sum closest to target
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find 3 numbers with sum closest to target.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

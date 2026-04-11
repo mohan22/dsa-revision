@@ -12,6 +12,11 @@
 
 How to compute LCS (Longest Common Subsequence)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute LCS (Longest Common Subsequence).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

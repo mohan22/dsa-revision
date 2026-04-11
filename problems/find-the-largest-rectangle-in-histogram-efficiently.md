@@ -12,6 +12,11 @@
 
 How to find the largest rectangle in histogram efficiently
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the largest rectangle in histogram efficiently.
+
 ## Recognition Pattern
 
 - Topic signal: Stack

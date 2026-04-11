@@ -12,6 +12,11 @@
 
 How does path compression optimize DSU
 
+
+## Brief Problem Statement
+
+Understand how to ath compression optimize DSU.
+
 ## Recognition Pattern
 
 - Topic signal: DSU

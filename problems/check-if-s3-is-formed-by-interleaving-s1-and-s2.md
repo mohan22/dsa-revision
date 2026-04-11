@@ -12,6 +12,11 @@
 
 How to check if s3 is formed by interleaving s1 and s2
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if s3 is formed by interleaving s1 and s2.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

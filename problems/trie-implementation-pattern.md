@@ -12,6 +12,11 @@
 
 What is the basic Trie implementation pattern
 
+
+## Brief Problem Statement
+
+Identify the core idea behind basic Trie implementation pattern and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

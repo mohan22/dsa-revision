@@ -12,6 +12,11 @@
 
 What is the k-way merge pattern using a heap
 
+
+## Brief Problem Statement
+
+Identify the core idea behind k-way merge pattern using a heap and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

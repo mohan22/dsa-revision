@@ -12,6 +12,11 @@
 
 What is the local optimality pattern in greedy
 
+
+## Brief Problem Statement
+
+Identify the core idea behind local optimality pattern in greedy and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

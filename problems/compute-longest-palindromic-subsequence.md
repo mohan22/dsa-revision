@@ -12,6 +12,11 @@
 
 How to compute Longest Palindromic Subsequence
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute Longest Palindromic Subsequence.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

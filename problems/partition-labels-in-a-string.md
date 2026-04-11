@@ -12,6 +12,11 @@
 
 How to partition labels in a string
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to partition labels in a string.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

@@ -12,6 +12,11 @@
 
 What is the DP solution for Unique Paths
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP solution for Unique Paths and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

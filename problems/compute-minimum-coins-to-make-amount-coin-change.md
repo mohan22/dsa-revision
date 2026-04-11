@@ -12,6 +12,11 @@
 
 How to compute minimum coins to make amount (Coin Change)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute minimum coins to make amount (Coin Change).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

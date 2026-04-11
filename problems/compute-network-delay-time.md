@@ -12,6 +12,11 @@
 
 How to compute Network Delay Time
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute Network Delay Time.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

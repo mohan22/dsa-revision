@@ -12,6 +12,11 @@
 
 How to solve Path With Minimum Effort
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Path With Minimum Effort.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

@@ -12,6 +12,11 @@
 
 What is the Dijkstra shortest path pattern
 
+
+## Brief Problem Statement
+
+Identify the core idea behind Dijkstra shortest path pattern and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

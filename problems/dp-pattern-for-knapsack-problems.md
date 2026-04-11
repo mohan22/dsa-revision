@@ -12,6 +12,11 @@
 
 What is the standard DP pattern for knapsack problems
 
+
+## Brief Problem Statement
+
+Identify the core idea behind standard DP pattern for knapsack problems and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

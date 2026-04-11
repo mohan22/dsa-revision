@@ -12,6 +12,11 @@
 
 What is the two-heap pattern for finding median
 
+
+## Brief Problem Statement
+
+Identify the core idea behind two-heap pattern for finding median and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

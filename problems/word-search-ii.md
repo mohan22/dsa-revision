@@ -12,6 +12,11 @@
 
 Find all dictionary words that can be formed on a board using adjacent cells.
 
+
+## Brief Problem Statement
+
+Find all dictionary words that can be formed on a board using adjacent cells.
+
 ## Recognition Pattern
 
 - Multiple words checked against the same board

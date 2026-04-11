@@ -12,6 +12,11 @@
 
 How does backtracking solve N-Queens
 
+
+## Brief Problem Statement
+
+Understand how to acktracking solve N-Queens.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

@@ -12,6 +12,11 @@
 
 How to count ways to assign +/− to reach target sum
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count ways to assign +/− to reach target sum.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

@@ -12,6 +12,11 @@
 
 Why can't Dijkstra be used with negative edges
 
+
+## Brief Problem Statement
+
+Explain why can't Dijkstra be used with negative edges and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

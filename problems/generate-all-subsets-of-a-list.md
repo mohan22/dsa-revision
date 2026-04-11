@@ -12,6 +12,11 @@
 
 How to generate all subsets of a list
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to generate all subsets of a list.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

@@ -12,6 +12,11 @@
 
 What is the standard recursion template to compute height/depth of a tree
 
+
+## Brief Problem Statement
+
+Identify the core idea behind standard recursion template to compute height/depth of a tree and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

@@ -12,6 +12,11 @@
 
 What is a bitwise trie and when is it used
 
+
+## Brief Problem Statement
+
+Identify what a bitwise trie and when is it used means and when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

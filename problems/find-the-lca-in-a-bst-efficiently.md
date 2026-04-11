@@ -12,6 +12,11 @@
 
 How do you find the LCA in a BST efficiently
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to find the LCA in a BST efficiently.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

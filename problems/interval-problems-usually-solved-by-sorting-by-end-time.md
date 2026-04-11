@@ -12,6 +12,11 @@
 
 Why are interval problems usually solved by sorting by end time
 
+
+## Brief Problem Statement
+
+Explain why are interval problems usually solved by sorting by end time and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

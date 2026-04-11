@@ -12,6 +12,11 @@
 
 How to check if a binary tree is height-balanced
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if a binary tree is height-balanced.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

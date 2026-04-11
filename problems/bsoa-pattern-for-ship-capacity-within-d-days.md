@@ -12,6 +12,11 @@
 
 What is the BSOA pattern for Ship Capacity Within D Days
 
+
+## Brief Problem Statement
+
+Identify the core idea behind BSOA pattern for Ship Capacity Within D Days and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

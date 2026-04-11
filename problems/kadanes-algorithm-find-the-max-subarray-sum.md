@@ -12,6 +12,11 @@
 
 How does Kadane’s Algorithm find the max subarray sum
 
+
+## Brief Problem Statement
+
+Understand how to adane’s Algorithm find the max subarray sum.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

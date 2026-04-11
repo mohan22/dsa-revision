@@ -12,6 +12,11 @@
 
 How do you initialize the DP table for grid problems
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to initialize the DP table for grid problems.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

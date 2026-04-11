@@ -12,6 +12,11 @@
 
 How do you reduce DP memory using rolling array optimization
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to reduce DP memory using rolling array optimization.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

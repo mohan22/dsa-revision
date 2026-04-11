@@ -12,6 +12,11 @@
 
 How do frequency maps combine with heaps for Top-K problems
 
+
+## Brief Problem Statement
+
+Core task: How do frequency maps combine with heaps for Top-K problems.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

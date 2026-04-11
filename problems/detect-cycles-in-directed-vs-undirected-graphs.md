@@ -12,6 +12,11 @@
 
 How to detect cycles in directed vs undirected graphs
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to detect cycles in directed vs undirected graphs.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

@@ -12,6 +12,11 @@
 
 How to clone a graph using DFS/BFS
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to clone a graph using DFS/BFS.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

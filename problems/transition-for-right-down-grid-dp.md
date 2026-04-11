@@ -12,6 +12,11 @@
 
 What is the standard transition for right/down grid DP
 
+
+## Brief Problem Statement
+
+Identify the core idea behind standard transition for right/down grid DP and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

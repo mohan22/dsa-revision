@@ -12,6 +12,11 @@
 
 What is the Greedy Choice Property and why is it important
 
+
+## Brief Problem Statement
+
+Identify the core idea behind Greedy Choice Property and why is it important and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

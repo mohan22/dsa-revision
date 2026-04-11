@@ -12,6 +12,11 @@
 
 How to check if two strings are anagrams efficiently
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if two strings are anagrams efficiently.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

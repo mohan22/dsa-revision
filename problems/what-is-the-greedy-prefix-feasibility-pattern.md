@@ -12,6 +12,11 @@
 
 What is the greedy prefix feasibility pattern
 
+
+## Brief Problem Statement
+
+Identify the core idea behind greedy prefix feasibility pattern and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

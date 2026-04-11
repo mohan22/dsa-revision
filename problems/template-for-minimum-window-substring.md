@@ -12,6 +12,11 @@
 
 Template for Minimum Window Substring
 
+
+## Brief Problem Statement
+
+Core task: Template for Minimum Window Substring.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

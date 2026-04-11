@@ -12,6 +12,11 @@
 
 How do you choose between BFS, Dijkstra, 0-1 BFS, and Bellman-Ford
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to choose between BFS, Dijkstra, 0-1 BFS, and Bellman-Ford.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

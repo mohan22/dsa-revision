@@ -12,6 +12,11 @@
 
 How to calculate trapped rain water efficiently
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to calculate trapped rain water efficiently.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

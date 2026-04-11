@@ -12,6 +12,11 @@
 
 What is the recursive template for insert/delete in BST
 
+
+## Brief Problem Statement
+
+Identify the core idea behind recursive template for insert/delete in BST and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

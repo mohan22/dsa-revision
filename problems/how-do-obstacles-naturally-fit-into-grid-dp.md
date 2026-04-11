@@ -12,6 +12,11 @@
 
 How do obstacles naturally fit into grid DP
 
+
+## Brief Problem Statement
+
+Core task: How do obstacles naturally fit into grid DP.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

@@ -12,6 +12,11 @@
 
 When do tree problems require a global variable
 
+
+## Brief Problem Statement
+
+Decide when do tree problems require a global variable and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

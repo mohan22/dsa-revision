@@ -12,6 +12,11 @@
 
 How to find leftmost or rightmost occurrence of a target
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find leftmost or rightmost occurrence of a target.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

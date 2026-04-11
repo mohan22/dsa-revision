@@ -12,6 +12,11 @@
 
 How to solve Walls and Gates using BFS
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Walls and Gates using BFS.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

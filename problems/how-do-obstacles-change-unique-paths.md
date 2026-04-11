@@ -12,6 +12,11 @@
 
 How do obstacles change Unique Paths
 
+
+## Brief Problem Statement
+
+Core task: How do obstacles change Unique Paths.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

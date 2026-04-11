@@ -12,6 +12,11 @@
 
 What is the Bellman-Ford recurrence used for
 
+
+## Brief Problem Statement
+
+Identify the core idea behind Bellman-Ford recurrence used for and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

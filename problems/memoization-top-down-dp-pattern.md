@@ -12,6 +12,11 @@
 
 What is the standard memoization (top-down DP) pattern
 
+
+## Brief Problem Statement
+
+Identify the core idea behind standard memoization (top-down DP) pattern and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

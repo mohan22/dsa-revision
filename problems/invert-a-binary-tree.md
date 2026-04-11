@@ -12,6 +12,11 @@
 
 How to invert a binary tree
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to invert a binary tree.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

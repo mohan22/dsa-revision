@@ -12,6 +12,11 @@
 
 How is Edit Distance computed using DP
 
+
+## Brief Problem Statement
+
+Core task: How is Edit Distance computed using DP.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

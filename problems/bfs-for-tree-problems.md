@@ -12,6 +12,11 @@
 
 When should you use BFS for tree problems
 
+
+## Brief Problem Statement
+
+Decide when should you use BFS for tree problems and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

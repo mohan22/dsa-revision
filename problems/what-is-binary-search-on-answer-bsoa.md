@@ -12,6 +12,11 @@
 
 What is Binary Search on Answer (BSOA)
 
+
+## Brief Problem Statement
+
+Identify what Binary Search on Answer (BSOA) means and when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

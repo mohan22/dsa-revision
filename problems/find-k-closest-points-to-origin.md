@@ -12,6 +12,11 @@
 
 How to find K closest points to origin
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find K closest points to origin.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

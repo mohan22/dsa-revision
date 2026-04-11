@@ -12,6 +12,11 @@
 
 How to return valid order of courses in Course Schedule II
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to return valid order of courses in Course Schedule II.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

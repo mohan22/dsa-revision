@@ -12,6 +12,11 @@
 
 When should you use a heap instead of sorting or brute force
 
+
+## Brief Problem Statement
+
+Decide when should you use a heap instead of sorting or brute force and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

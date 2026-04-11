@@ -12,6 +12,11 @@
 
 How to find shortest transformation from beginWord to endWord (Word Ladder)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find shortest transformation from beginWord to endWord (Word Ladder).
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

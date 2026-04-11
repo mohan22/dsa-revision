@@ -12,6 +12,11 @@
 
 How to find the longest subarray with equal 0s and 1s
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the longest subarray with equal 0s and 1s.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

@@ -12,6 +12,11 @@
 
 What data structure helps group anagrams efficiently
 
+
+## Brief Problem Statement
+
+Core task: What data structure helps group anagrams efficiently.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

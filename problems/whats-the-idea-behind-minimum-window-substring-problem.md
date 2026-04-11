@@ -12,6 +12,11 @@
 
 What’s the idea behind Minimum Window Substring problem
 
+
+## Brief Problem Statement
+
+Core task: What’s the idea behind Minimum Window Substring problem.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

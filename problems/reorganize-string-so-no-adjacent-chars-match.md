@@ -12,6 +12,11 @@
 
 How to reorganize string so no adjacent chars match
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to reorganize string so no adjacent chars match.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

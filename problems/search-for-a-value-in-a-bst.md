@@ -12,6 +12,11 @@
 
 How to search for a value in a BST
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to search for a value in a BST.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

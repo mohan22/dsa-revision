@@ -12,6 +12,11 @@
 
 How to find first and last occurrence of a target in sorted array
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find first and last occurrence of a target in sorted array.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

@@ -12,6 +12,11 @@
 
 How do you compute product of array except self without division
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to compute product of array except self without division.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

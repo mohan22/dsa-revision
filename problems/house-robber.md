@@ -12,6 +12,11 @@
 
 What is the DP pattern for House Robber
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP pattern for House Robber and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

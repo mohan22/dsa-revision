@@ -12,6 +12,11 @@
 
 When do we use hashmap frequency inside a sliding window
 
+
+## Brief Problem Statement
+
+Decide when do we use hashmap frequency inside a sliding window and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

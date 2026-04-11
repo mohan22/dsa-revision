@@ -12,6 +12,11 @@
 
 Why does BFS compute shortest path in unweighted graphs
 
+
+## Brief Problem Statement
+
+Explain why does BFS compute shortest path in unweighted graphs and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

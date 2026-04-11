@@ -12,6 +12,11 @@
 
 Return the `k` most frequent elements in the array.
 
+
+## Brief Problem Statement
+
+Return the `k` most frequent elements in the array.
+
 ## Recognition Pattern
 
 - Need frequency counting plus repeated best selection

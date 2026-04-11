@@ -12,6 +12,11 @@
 
 What’s the recurrence for classic 0/1 Knapsack
 
+
+## Brief Problem Statement
+
+Core task: What’s the recurrence for classic 0/1 Knapsack.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

@@ -12,6 +12,11 @@
 
 How to distribute candies based on ratings
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to distribute candies based on ratings.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

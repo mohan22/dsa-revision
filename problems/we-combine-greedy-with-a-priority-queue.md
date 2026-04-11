@@ -12,6 +12,11 @@
 
 When do we combine greedy with a priority queue
 
+
+## Brief Problem Statement
+
+Decide when do we combine greedy with a priority queue and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

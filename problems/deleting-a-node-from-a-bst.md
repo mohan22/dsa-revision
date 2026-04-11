@@ -12,6 +12,11 @@
 
 What is the pattern for deleting a node from a BST
 
+
+## Brief Problem Statement
+
+Identify the core idea behind pattern for deleting a node from a BST and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

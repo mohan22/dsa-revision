@@ -12,6 +12,11 @@
 
 What is the search pattern inside a BST
 
+
+## Brief Problem Statement
+
+Identify the core idea behind search pattern inside a BST and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

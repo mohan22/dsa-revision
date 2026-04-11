@@ -12,6 +12,11 @@
 
 How to find minimum coins to make up an amount
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find minimum coins to make up an amount.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

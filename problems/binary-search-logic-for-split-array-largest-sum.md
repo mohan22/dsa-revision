@@ -12,6 +12,11 @@
 
 What is the binary search logic for Split Array Largest Sum
 
+
+## Brief Problem Statement
+
+Identify the core idea behind binary search logic for Split Array Largest Sum and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

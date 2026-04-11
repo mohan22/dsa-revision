@@ -12,6 +12,11 @@
 
 How to generate subsets when duplicates exist (Subsets II)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to generate subsets when duplicates exist (Subsets II).
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

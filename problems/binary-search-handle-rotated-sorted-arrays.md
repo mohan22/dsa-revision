@@ -12,6 +12,11 @@
 
 How does binary search handle rotated sorted arrays
 
+
+## Brief Problem Statement
+
+Understand how to inary search handle rotated sorted arrays.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

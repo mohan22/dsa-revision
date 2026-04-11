@@ -12,6 +12,11 @@
 
 How to find the length of longest valid parentheses substring
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the length of longest valid parentheses substring.
+
 ## Recognition Pattern
 
 - Topic signal: Stack

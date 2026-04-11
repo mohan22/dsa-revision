@@ -12,6 +12,11 @@
 
 When do we need a used[] array in backtracking
 
+
+## Brief Problem Statement
+
+Decide when do we need a used[] array in backtracking and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

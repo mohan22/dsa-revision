@@ -12,6 +12,11 @@
 
 How to find number of submatrices with sum = k
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find number of submatrices with sum = k.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

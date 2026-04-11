@@ -12,6 +12,11 @@
 
 How to count all palindromic substrings
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count all palindromic substrings.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

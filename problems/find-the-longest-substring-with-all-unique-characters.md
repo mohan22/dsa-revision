@@ -12,6 +12,11 @@
 
 How to find the longest substring with all unique characters
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the longest substring with all unique characters.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

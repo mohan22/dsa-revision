@@ -12,6 +12,11 @@
 
 How are candidates selected in backtracking problems
 
+
+## Brief Problem Statement
+
+Core task: How are candidates selected in backtracking problems.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

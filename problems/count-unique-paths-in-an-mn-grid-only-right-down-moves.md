@@ -12,6 +12,11 @@
 
 How to count unique paths in an m×n grid (only right/down moves)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count unique paths in an m×n grid (only right/down moves).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

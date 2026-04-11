@@ -12,6 +12,11 @@
 
 What is the general pattern for a variable-size sliding window
 
+
+## Brief Problem Statement
+
+Identify the core idea behind general pattern for a variable-size sliding window and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

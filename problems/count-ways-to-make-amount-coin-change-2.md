@@ -12,6 +12,11 @@
 
 How to count ways to make amount (Coin Change 2)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count ways to make amount (Coin Change 2).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

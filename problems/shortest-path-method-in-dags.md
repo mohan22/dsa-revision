@@ -12,6 +12,11 @@
 
 What is the shortest path method in DAGs
 
+
+## Brief Problem Statement
+
+Identify the core idea behind shortest path method in DAGs and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

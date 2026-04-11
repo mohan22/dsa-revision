@@ -12,6 +12,11 @@
 
 What is the core idea of backtracking and when do we use it
 
+
+## Brief Problem Statement
+
+Identify the core idea behind core idea of backtracking and when do we use it and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

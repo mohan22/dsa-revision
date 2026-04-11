@@ -12,6 +12,11 @@
 
 When do we use min-heap vs max-heap
 
+
+## Brief Problem Statement
+
+Decide when do we use min-heap vs max-heap and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Heap / Priority Queue

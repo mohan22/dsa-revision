@@ -12,6 +12,11 @@
 
 Cheapest Flights Within K Stops
 
+
+## Brief Problem Statement
+
+Core task: Cheapest Flights Within K Stops.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

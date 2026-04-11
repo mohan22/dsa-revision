@@ -12,6 +12,11 @@
 
 How to determine if array can be partitioned into 2 subsets with equal sum
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to determine if array can be partitioned into 2 subsets with equal sum.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

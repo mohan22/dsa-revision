@@ -12,6 +12,11 @@
 
 How to detect if all courses can be finished given prerequisites
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to detect if all courses can be finished given prerequisites.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

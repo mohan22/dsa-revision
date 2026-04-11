@@ -12,6 +12,11 @@
 
 Minimum Weighted Path in Grid
 
+
+## Brief Problem Statement
+
+Core task: Minimum Weighted Path in Grid.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

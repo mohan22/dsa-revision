@@ -12,6 +12,11 @@
 
 What is the DP formula for Minimum Path Sum
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP formula for Minimum Path Sum and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

@@ -12,6 +12,11 @@
 
 How to find minimum in a rotated sorted array
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find minimum in a rotated sorted array.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

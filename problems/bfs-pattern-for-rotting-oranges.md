@@ -12,6 +12,11 @@
 
 What is the BFS pattern for Rotting Oranges
 
+
+## Brief Problem Statement
+
+Identify the core idea behind BFS pattern for Rotting Oranges and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

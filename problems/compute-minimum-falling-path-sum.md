@@ -12,6 +12,11 @@
 
 How to compute Minimum Falling Path Sum
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to compute Minimum Falling Path Sum.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

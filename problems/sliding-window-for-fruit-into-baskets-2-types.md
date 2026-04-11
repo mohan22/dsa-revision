@@ -12,6 +12,11 @@
 
 Sliding window for Fruit Into Baskets (2 types)
 
+
+## Brief Problem Statement
+
+Core task: Sliding window for Fruit Into Baskets (2 types).
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

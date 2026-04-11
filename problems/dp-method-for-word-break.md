@@ -12,6 +12,11 @@
 
 What is the DP method for Word Break
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP method for Word Break and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

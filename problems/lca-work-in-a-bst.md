@@ -12,6 +12,11 @@
 
 How does LCA work in a BST
 
+
+## Brief Problem Statement
+
+Understand how to CA work in a BST.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

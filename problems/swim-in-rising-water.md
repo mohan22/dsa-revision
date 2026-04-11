@@ -12,6 +12,11 @@
 
 Swim in Rising Water
 
+
+## Brief Problem Statement
+
+Core task: Swim in Rising Water.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

@@ -12,6 +12,11 @@
 
 How to minimize Koko’s eating speed so she finishes bananas within h hours
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to minimize Koko’s eating speed so she finishes bananas within h hours.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

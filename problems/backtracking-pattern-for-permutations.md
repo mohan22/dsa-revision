@@ -12,6 +12,11 @@
 
 What is the backtracking pattern for permutations
 
+
+## Brief Problem Statement
+
+Identify the core idea behind backtracking pattern for permutations and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Backtracking

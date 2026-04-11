@@ -12,6 +12,11 @@
 
 What’s the optimal approach to solve Two Sum
 
+
+## Brief Problem Statement
+
+Core task: What’s the optimal approach to solve Two Sum.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

@@ -12,6 +12,11 @@
 
 What is the DP table logic for LCS
 
+
+## Brief Problem Statement
+
+Identify the core idea behind DP table logic for LCS and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

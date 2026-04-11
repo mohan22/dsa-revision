@@ -12,6 +12,11 @@
 
 How to check if you can reach the end in Jump Game
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if you can reach the end in Jump Game.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

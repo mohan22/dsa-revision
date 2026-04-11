@@ -12,6 +12,11 @@
 
 How to minimize arrows needed to burst balloons
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to minimize arrows needed to burst balloons.
+
 ## Recognition Pattern
 
 - Topic signal: Greedy

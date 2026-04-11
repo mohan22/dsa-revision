@@ -12,6 +12,11 @@
 
 How to solve Evaluate Division using weighted DSU
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Evaluate Division using weighted DSU.
+
 ## Recognition Pattern
 
 - Topic signal: DSU

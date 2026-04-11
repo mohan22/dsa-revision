@@ -12,6 +12,11 @@
 
 How do you reduce DP grid memory with rolling rows
 
+
+## Brief Problem Statement
+
+Given the problem setup, determine how to reduce DP grid memory with rolling rows.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

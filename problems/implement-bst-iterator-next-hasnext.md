@@ -12,6 +12,11 @@
 
 How to implement BST Iterator (next + hasNext)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to implement BST Iterator (next + hasNext).
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

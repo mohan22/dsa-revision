@@ -12,6 +12,11 @@
 
 What is the BST property and why is inorder traversal important
 
+
+## Brief Problem Statement
+
+Identify the core idea behind BST property and why is inorder traversal important and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

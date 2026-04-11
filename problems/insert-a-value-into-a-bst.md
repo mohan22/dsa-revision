@@ -12,6 +12,11 @@
 
 How to insert a value into a BST
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to insert a value into a BST.
+
 ## Recognition Pattern
 
 - Topic signal: Trees / BST

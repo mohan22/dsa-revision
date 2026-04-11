@@ -12,6 +12,11 @@
 
 How to move all zeroes to end maintaining order
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to move all zeroes to end maintaining order.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

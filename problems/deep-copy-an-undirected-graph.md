@@ -12,6 +12,11 @@
 
 How to deep-copy an undirected graph
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to deep-copy an undirected graph.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

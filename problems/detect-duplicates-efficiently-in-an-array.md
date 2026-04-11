@@ -12,6 +12,11 @@
 
 How to detect duplicates efficiently in an array
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to detect duplicates efficiently in an array.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

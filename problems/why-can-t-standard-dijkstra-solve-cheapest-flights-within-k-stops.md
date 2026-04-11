@@ -12,6 +12,11 @@
 
 Why can't standard Dijkstra solve Cheapest Flights Within K Stops
 
+
+## Brief Problem Statement
+
+Explain why can't standard Dijkstra solve Cheapest Flights Within K Stops and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

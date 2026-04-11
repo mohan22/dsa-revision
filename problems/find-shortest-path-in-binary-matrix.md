@@ -12,6 +12,11 @@
 
 How to find shortest path in binary matrix
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find shortest path in binary matrix.
+
 ## Recognition Pattern
 
 - Topic signal: Graph / Matrix

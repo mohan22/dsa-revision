@@ -12,6 +12,11 @@
 
 How to find the longest subarray whose sum equals k
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the longest subarray whose sum equals k.
+
 ## Recognition Pattern
 
 - Topic signal: Arrays / Hashing

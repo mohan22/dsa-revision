@@ -12,6 +12,11 @@
 
 How to check if string is a palindrome ignoring non-alphanumeric chars
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to check if string is a palindrome ignoring non-alphanumeric chars.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

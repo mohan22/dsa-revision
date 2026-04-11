@@ -12,6 +12,11 @@
 
 How to maximize amount robbed without adjacent houses
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to maximize amount robbed without adjacent houses.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

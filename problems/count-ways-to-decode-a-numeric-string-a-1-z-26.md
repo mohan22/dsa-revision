@@ -12,6 +12,11 @@
 
 How to count ways to decode a numeric string (A=1,...,Z=26)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to count ways to decode a numeric string (A=1,...,Z=26).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

@@ -12,6 +12,11 @@
 
 How to build DP for palindrome substring problems
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to build DP for palindrome substring problems.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

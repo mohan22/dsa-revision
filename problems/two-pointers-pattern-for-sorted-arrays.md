@@ -12,6 +12,11 @@
 
 What is the two-pointers pattern for sorted arrays
 
+
+## Brief Problem Statement
+
+Identify the core idea behind two-pointers pattern for sorted arrays and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

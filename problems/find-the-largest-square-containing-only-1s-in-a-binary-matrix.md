@@ -12,6 +12,11 @@
 
 How to find the largest square containing only 1’s in a binary matrix
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find the largest square containing only 1’s in a binary matrix.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

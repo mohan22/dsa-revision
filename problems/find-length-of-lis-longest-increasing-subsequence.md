@@ -12,6 +12,11 @@
 
 How to find length of LIS (Longest Increasing Subsequence)
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find length of LIS (Longest Increasing Subsequence).
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

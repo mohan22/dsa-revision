@@ -12,6 +12,11 @@
 
 What is the subsequence DP pattern
 
+
+## Brief Problem Statement
+
+Identify the core idea behind subsequence DP pattern and know when to apply it.
+
 ## Recognition Pattern
 
 - Topic signal: Dynamic Programming

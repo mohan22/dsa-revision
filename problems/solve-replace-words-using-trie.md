@@ -12,6 +12,11 @@
 
 How to solve Replace Words using Trie
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to solve Replace Words using Trie.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

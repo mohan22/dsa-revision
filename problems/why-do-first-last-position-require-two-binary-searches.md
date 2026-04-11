@@ -12,6 +12,11 @@
 
 Why do First/Last Position require two binary searches
 
+
+## Brief Problem Statement
+
+Explain why do First/Last Position require two binary searches and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

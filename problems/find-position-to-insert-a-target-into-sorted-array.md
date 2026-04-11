@@ -12,6 +12,11 @@
 
 How to find position to insert a target into sorted array
 
+
+## Brief Problem Statement
+
+Given the problem setup, find an efficient way to find position to insert a target into sorted array.
+
 ## Recognition Pattern
 
 - Topic signal: Binary Search

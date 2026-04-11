@@ -12,6 +12,11 @@
 
 Two-pointer approach for Two Sum II
 
+
+## Brief Problem Statement
+
+Core task: Two-pointer approach for Two Sum II.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

@@ -12,6 +12,11 @@
 
 Why combine Trie + DFS in word search problems
 
+
+## Brief Problem Statement
+
+Explain why combine Trie + DFS in word search problems and how it affects the algorithm choice.
+
 ## Recognition Pattern
 
 - Topic signal: Trie

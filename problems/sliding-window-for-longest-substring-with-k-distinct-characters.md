@@ -12,6 +12,11 @@
 
 Sliding window for longest substring with K distinct characters
 
+
+## Brief Problem Statement
+
+Core task: Sliding window for longest substring with K distinct characters.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window

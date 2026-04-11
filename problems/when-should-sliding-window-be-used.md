@@ -12,6 +12,11 @@
 
 When should sliding window be used
 
+
+## Brief Problem Statement
+
+Decide when should sliding window be used and what problem signals justify that choice.
+
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window
