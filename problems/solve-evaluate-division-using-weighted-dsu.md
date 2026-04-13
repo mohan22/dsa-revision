@@ -75,6 +75,8 @@ These handwritten notes capture the same weighted-DSU invariant and union-formul
 
 ![Weighted DSU derivation 2](../assets/solve-evaluate-division-using-weighted-dsu/derivation-2.jpg)
 
+![Weighted DSU derivation 3](../assets/solve-evaluate-division-using-weighted-dsu/derivation-3.jpg)
+
 ## Thought Process During Solving
 
 1. Why is plain DSU not enough? It tells me connectivity but not the actual ratio.
