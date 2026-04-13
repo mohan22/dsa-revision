@@ -46,11 +46,26 @@ That makes each query easy after unions are built.
 
 1. Map every distinct variable string to an integer id.
 2. Initialize weighted DSU over those ids.
-3. For each equation `a / b = value`, union the two ids while preserving the ratio invariant.
-4. For each query:
+3. Maintain this invariant:
+   - `weight[x] = x / parent[x]`
+   - after path compression, `weight[x] = x / root(x)`
+4. For an equation `x / y = ratio`:
+   - let `rootX = find(x)` and `rootY = find(y)`
+   - after `find`, we know:
+     - `weight[x] = x / rootX`
+     - `weight[y] = y / rootY`
+   - so:
+     - `ratio = x / y = (x / rootX) * (rootX / rootY) / (y / rootY)`
+     - `ratio = weight[x] * (rootX / rootY) / weight[y]`
+5. If we attach `rootX` under `rootY`, we need:
+   - `weight[rootX] = rootX / rootY = ratio * weight[y] / weight[x]`
+6. If we attach `rootY` under `rootX`, we need:
+   - `weight[rootY] = rootY / rootX = weight[x] / (ratio * weight[y])`
+7. During path compression, when `x` skips its old parent and points directly to the root, multiply weights along the path so `weight[x]` stays equal to `x / root`.
+8. For each query:
    - if either variable is unknown, answer `-1.0`
    - if roots differ, answer `-1.0`
-   - otherwise return `weight[a] / weight[b]`
+   - otherwise return `weight[x] / weight[y]`
 
 ## Thought Process During Solving
 
