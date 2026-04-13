@@ -67,6 +67,14 @@ That makes each query easy after unions are built.
    - if roots differ, answer `-1.0`
    - otherwise return `weight[x] / weight[y]`
 
+### Derivation Notes
+
+These handwritten notes capture the same weighted-DSU invariant and union-formula derivation used above:
+
+![Weighted DSU derivation 1](../assets/solve-evaluate-division-using-weighted-dsu/derivation-1.jpg)
+
+![Weighted DSU derivation 2](../assets/solve-evaluate-division-using-weighted-dsu/derivation-2.jpg)
+
 ## Thought Process During Solving
 
 1. Why is plain DSU not enough? It tells me connectivity but not the actual ratio.
