@@ -64,14 +64,14 @@ Sort edges by weight. For each edge `(u, v, w)`, if `find(u) != find(v)`, then `
 class Solution {
     static class DSU {
         int[] parent;
-        int[] size;
+        int[] rank;
 
         DSU(int n) {
             parent = new int[n];
-            size = new int[n];
+            rank = new int[n];
             for (int i = 0; i < n; i++) {
                 parent[i] = i;
-                size[i] = 1;
+                rank[i] = 0;
             }
         }
 
@@ -86,12 +86,13 @@ class Solution {
             int rx = find(x);
             int ry = find(y);
             if (rx == ry) return false;
-            if (size[rx] < size[ry]) {
+            if (rank[rx] < rank[ry]) {
                 parent[rx] = ry;
-                size[ry] += size[rx];
+            } else if (rank[rx] > rank[ry]) {
+                parent[ry] = rx;
             } else {
                 parent[ry] = rx;
-                size[rx] += size[ry];
+                rank[rx]++;
             }
             return true;
         }
