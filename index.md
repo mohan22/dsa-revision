@@ -4,8 +4,8 @@
 
 - Raw Anki entries represented: 247
 - Unique problem notes in repo: 244
-- Tier 1: 15 curated full-solution notes
-- Tier 2: 229 notes
+- Tier 1: 16 curated full-solution notes
+- Tier 2: 228 notes
 - Some overlapping Anki prompts are intentionally merged into the same canonical note when they cover the same problem.
 
 ## Tier 1 Problems
@@ -27,6 +27,7 @@
 | [DSU Fit Into Redundant Connection II](problems/dsu-fit-into-redundant-connection-ii.md) | DSU | DSU / Directed graph repair | New |
 | [DSU Solves Accounts Merge](problems/dsu-solve-accounts-merge.md) | DSU | DSU / Merge connected identities | New |
 | [Solve Evaluate Division Using Weighted DSU](problems/solve-evaluate-division-using-weighted-dsu.md) | DSU | Weighted DSU / Query evaluation | New |
+| [Check If Graph Is a Valid Tree Using DSU](problems/check-if-graph-is-a-valid-tree-using-dsu.md) | DSU | DSU / Tree validation | New |
 
 ## Tier 2 Core Problems
 
