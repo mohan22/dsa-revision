@@ -59,6 +59,9 @@ Maintain a count of required characters. Expand the right end to include new cha
 4. Why is this template reusable for other minimum-window variants?
 
 ## Java Skeleton
+
+Another version of the solution - https://docs.google.com/document/d/1wQA3e_XPPrqR1nfX5ppWDxQB9a4WcJBMBE7ag6TQWTg/edit?pli=1&tab=t.vt1w2o1x28dd#heading=h.r0q4qh4p6xz7
+
 ```java
 class Solution {
     public String minWindow(String s, String t) {
