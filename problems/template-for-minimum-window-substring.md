@@ -6,63 +6,130 @@
 - Tags: SlidingWindow, MinWindow, Day23
 - Difficulty: Not labeled
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
-## Problem Cue
+## Problem Statement
 
-Template for Minimum Window Substring
+Given two strings `s` and `t`, find the smallest substring of `s` that contains all characters of `t` with at least the same frequency. Return the minimum window substring. If no such substring exists, return an empty string.
 
+The input typically includes:
+- `s`: the source string
+- `t`: the target string of required characters
 
-## Brief Problem Statement
+The algorithm should:
+- build a frequency map for `t`,
+- expand a sliding window over `s`,
+- track how many required characters are still missing,
+- shrink the window when the current window is valid,
+- record the smallest valid window seen.
 
-Core task: Template for Minimum Window Substring.
+This template is essential for the general class of minimum-substring and minimum-subarray problems with a collection of required elements.
 
 ## Recognition Pattern
 
 - Topic signal: Two Pointers / Sliding Window
 - Pattern hint from tags: SlidingWindow / MinWindow
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- Key signal: smallest substring or subarray that covers all required items
+- Tier 1 note: know the missing-count invariant and the two-phase expand/shrink window procedure
+
+## Brute Force Thought
+
+A brute-force approach checks every possible substring and verifies whether it covers `t`, leading to O(n^2 * m) time. The optimized template keeps counts and moves both ends of the window in one pass, reducing the work to O(n + m).
 
 ## Core Insight
 
-need map, missing count. Expand right; when missing==0 shrink left while valid; track best window.
+Maintain a count of required characters. Expand the right end to include new characters until the window is valid. Then move the left end to remove extra characters while preserving validity. Track the best window length and position during the process.
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Count characters in `t` using a frequency map.
+2. Initialize `left = 0`, `matched = 0`, `minLen = Integer.MAX_VALUE`, `start = 0`.
+3. Slide `right` through `s`:
+   - decrement the count for `s[right]` if it is required,
+   - increment `matched` when a required character's remaining count is non-negative,
+   - when all chars are matched, shrink the window from the left while keeping it valid,
+   - update the minimum window when the current window is valid.
+4. Return the substring defined by the best window or `""` if none exists.
 
 ## Thought Process During Solving
 
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
+1. Why does the valid window condition depend on character counts rather than just distinct presence?
+2. How do you track whether removing the left character breaks validity?
+3. What is the invariant that lets you stop shrinking the window?
+4. Why is this template reusable for other minimum-window variants?
 
 ## Java Skeleton
 ```java
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public String minWindow(String s, String t) {
+        if (s == null || t == null || s.length() < t.length()) {
+            return "";
+        }
+
+        int[] need = new int[128];
+        for (char c : t.toCharArray()) {
+            need[c]++;
+        }
+
+        int left = 0;
+        int minLen = Integer.MAX_VALUE;
+        int start = 0;
+        int matchCount = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+            if (need[c] > 0) {
+                matchCount++;
+            }
+            need[c]--;
+
+            while (matchCount == t.length()) {
+                if (right - left + 1 < minLen) {
+                    minLen = right - left + 1;
+                    start = left;
+                }
+
+                char leftChar = s.charAt(left);
+                need[leftChar]++;
+                if (need[leftChar] > 0) {
+                    matchCount--;
+                }
+                left++;
+            }
+        }
+
+        return minLen == Integer.MAX_VALUE ? "" : s.substring(start, start + minLen);
     }
 }
 ```
 
 ## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+- Time: O(n + m)
+- Space: O(1) for fixed alphabet or O(k) for the required character set
 
 ## Edge Cases / Traps
 
-- Check boundary conditions, duplicates, and empty input.
-- Verify the invariant or state after each update.
-- Confirm whether recursion, heap ordering, or index movement can fail.
+- `t` may be empty or longer than `s`.
+- Characters may repeat in `t`; counts matter.
+- The source string may contain characters not present in `t`.
+- If the target uses a larger alphabet, adjust the frequency map accordingly.
 
-## Promotion Checklist
+## Why This Works
 
-- Add a full Java solution.
-- Add exact time and space complexity.
-- Add one short brute-force vs optimized comparison.
-- Add 2-3 problem-specific traps.
+The algorithm expands until the window contains all required characters, then contracts to remove excess while preserving validity. The two-pointer window ensures every candidate substring is considered only once, yielding an optimal minimum window.
+
+## Interview Explanation
+
+Build a required-character count map, expand the window to satisfy all requirements, then shrink from the left to find the smallest valid window. Track the smallest valid window seen and return it.
+
+## Similar Problems
+
+- Minimum window subsequence
+- Smallest substring containing all unique characters
+- Smallest subarray with all distinct numbers
+
+## Anki Recall Prompts
+
+- What is the invariant for when the window is valid?
+- How does the algorithm know when to move the left pointer?
+- Why are counts required instead of just presence checks?
