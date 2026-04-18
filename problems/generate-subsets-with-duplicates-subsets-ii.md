@@ -6,63 +6,106 @@
 - Tags: Backtracking, Subsets, Duplicates, Day24
 - Difficulty: Not labeled
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
-## Problem Cue
+## Problem Statement
 
-How to generate subsets with duplicates (Subsets II)
+Given an integer array that may contain duplicates, generate all unique subsets (the power set). Each subset should appear only once, and the order of elements in a subset does not matter.
 
+The input typically includes:
+- `nums[]`: array of integers (may contain duplicates)
 
-## Brief Problem Statement
+The algorithm should:
+- sort the array to identify and skip duplicate elements,
+- use backtracking to build all subsets,
+- skip duplicate values at the same recursion level to avoid duplicate subsets,
+- include each number in the array at most as many times as it appears.
 
-Given the problem setup, find an efficient way to generate subsets with duplicates (Subsets II).
+This pattern is essential for generating unique combinations and subsets when duplicates are present.
 
 ## Recognition Pattern
 
 - Topic signal: Backtracking
 - Pattern hint from tags: Backtracking / Subsets
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- Key signal: generate all unique subsets with duplicate elements in input
+- Tier 1 note: know the sorting + duplicate skipping invariant at each recursion level
+
+## Brute Force Thought
+
+A brute-force approach generates all subsets naively, leading to exponential duplicates. The optimized backtracking with sorting and skipping duplicate values at each level produces only unique subsets.
 
 ## Core Insight
 
-nums.sort(); skip duplicates: if i>start and nums[i]==nums[i-1]: continue. Use backtrack(i+1).
+Sort the array. In backtracking, for each position, skip over duplicate values at the same level by checking `i > start && nums[i] == nums[i-1]`. This prevents generating duplicate subsets.
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Sort the input array.
+2. Use backtracking with parameters: current subset, start index.
+3. Add the current subset to result.
+4. For i from start to end:
+   - Skip if i > start and nums[i] == nums[i-1].
+   - Add nums[i] to subset, recurse with i+1.
+   - Backtrack by removing the last added number.
+5. Return all subsets collected.
 
 ## Thought Process During Solving
 
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
+1. Why does sorting help identify duplicates?
+2. How does the skip condition `i > start && nums[i] == nums[i-1]` prevent duplicates?
+3. Why use i+1 in the recursion instead of considering all remaining elements?
+4. What is the base case and when do we add a subset to the result?
 
 ## Java Skeleton
 ```java
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), nums, 0);
+        return result;
+    }
+
+    private void backtrack(List<List<Integer>> result, List<Integer> temp, int[] nums, int start) {
+        result.add(new ArrayList<>(temp));
+        for (int i = start; i < nums.length; i++) {
+            if (i > start && nums[i] == nums[i - 1]) continue;
+            temp.add(nums[i]);
+            backtrack(result, temp, nums, i + 1);
+            temp.remove(temp.size() - 1);
+        }
     }
 }
 ```
 
 ## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+- Time: O(2^n)
+- Space: O(n) for recursion stack and O(2^n) for result
 
 ## Edge Cases / Traps
 
-- Check boundary conditions, duplicates, and empty input.
-- Verify the invariant or state after each update.
-- Confirm whether recursion, heap ordering, or index movement can fail.
+- Empty array should return a list with one empty subset.
+- All elements are the same, e.g., [1,1,1].
+- Array with mixed duplicates and unique elements.
+- Single element array.
 
-## Promotion Checklist
+## Why This Works
 
-- Add a full Java solution.
-- Add exact time and space complexity.
-- Add one short brute-force vs optimized comparison.
-- Add 2-3 problem-specific traps.
+Sorting allows adjacent duplicates to be identified. The skip condition ensures that at each recursion level, only the first occurrence of a duplicate value is processed. This guarantees all and only unique subsets are generated.
+
+## Interview Explanation
+
+Sort the array, then use backtracking to build subsets. Skip duplicate values at each level to avoid generating duplicate subsets.
+
+## Similar Problems
+
+- Subsets (without duplicates)
+- Combination Sum II (avoid duplicates)
+- Permutations II (unique permutations)
+
+## Anki Recall Prompts
+
+- Why must the array be sorted first?
+- What does the skip condition `i > start && nums[i] == nums[i-1]` do?
+- When is a subset added to the result?
+
