@@ -4,65 +4,125 @@
 - Platform: Anki deck seed
 - Topic: Binary Search
 - Tags: BinarySearch, Insert, Day25
-- Difficulty: Not labeled
-- Revision Status: New
-- Tier: Tier 2
+- Difficulty: Easy
+- Revision Status: Complete
+- Tier: Tier 1
 
 ## Problem Cue
 
-How to solve Search Insert Position
+How to solve Search Insert Position efficiently using binary search?
 
+## Detailed Problem Statement
 
-## Brief Problem Statement
+Given a sorted array of distinct integers `nums` and a target value `target`, return the index if the target is found.
+If not, return the index where it would be inserted in order.
 
-Given the problem setup, find an efficient way to solve Search Insert Position.
+You must write an algorithm with O(log n) runtime complexity.
+
+**Example 1:**
+- Input: `nums = [1,3,5,6], target = 5`
+- Output: `2`
+
+**Example 2:**
+- Input: `nums = [1,3,5,6], target = 2`
+- Output: `1`
+
+**Example 3:**
+- Input: `nums = [1,3,5,6], target = 7`
+- Output: `4`
+
+**Constraints:**
+- `1 <= nums.length <= 10^4`
+- `-10^4 <= nums[i], target <= 10^4`
+- All elements in `nums` are distinct
+- `nums` is sorted in ascending order
 
 ## Recognition Pattern
 
 - Topic signal: Binary Search
-- Pattern hint from tags: BinarySearch / Insert
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- Key phrase: "search insert position"
+- The array is sorted and we need a position, not just existence
+- This is a classic lower-bound / first-not-less-than pattern
 
 ## Core Insight
 
-Lower bound search: if nums[mid] >= target: r=mid-1 else: l=mid+1 Return l.
+We need the smallest index such that `nums[index] >= target`.
+This is equivalent to a lower-bound binary search.
+
+Algorithmically:
+1. Maintain a search window `[left, right]`
+2. Compute `mid`
+3. If `nums[mid] < target`, move `left = mid + 1`
+4. Otherwise, move `right = mid - 1`
+5. When the loop ends, `left` is the correct insert position
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Initialize `left = 0`, `right = nums.length - 1`
+2. Binary search while `left <= right`
+3. If `nums[mid] == target`, return `mid`
+4. If `nums[mid] < target`, search right half
+5. If `nums[mid] > target`, search left half
+6. Return `left` after the loop
 
-## Thought Process During Solving
+This works because the first index where the array value is not less than `target` is the insertion point.
 
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
+## Brute-Force vs Optimized
 
-## Java Skeleton
+**Brute-Force:** Scan the array from left to right and return the first index where `nums[i] >= target`. Time: O(n).
+
+**Optimized:** Binary search on the sorted array to find the lower bound. Time: O(log n).
+
+## Java Implementation
+
 ```java
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return left;
     }
 }
 ```
 
-## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+## Complexity Analysis
+
+- Time: O(log n)
+  - Binary search over the sorted array of length n
+- Space: O(1)
+  - Constant extra space for pointers and mid calculation
 
 ## Edge Cases / Traps
 
-- Check boundary conditions, duplicates, and empty input.
-- Verify the invariant or state after each update.
-- Confirm whether recursion, heap ordering, or index movement can fail.
+- `target` smaller than all elements → return `0`
+- `target` larger than all elements → return `nums.length`
+- `nums` length = 1 → still handled by binary search
+- Off-by-one boundary: return `left`, not `right`
+- Avoid overflow when computing `mid` by using `left + (right - left) / 2`
 
-## Promotion Checklist
+## When to Use This Pattern
 
-- Add a full Java solution.
-- Add exact time and space complexity.
-- Add one short brute-force vs optimized comparison.
-- Add 2-3 problem-specific traps.
+Use this lower-bound binary search pattern when:
+- the array is sorted
+- you need an insertion index or first position satisfying a condition
+- the answer is the first index where `nums[mid] >= target`
+
+## Key Takeaways
+
+- Search Insert Position is a lower-bound binary search problem
+- The correct position after the loop is `left`
+- Binary search gives the required O(log n) complexity for sorted input
+- Always consider the insert position even when the target is absent
