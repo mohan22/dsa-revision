@@ -1,68 +1,102 @@
 # Problem: Find The Longest Subarray Whose Sum Equals K
 
 ## Source
-- Platform: Anki deck seed
-- Topic: Arrays / Hashing
-- Tags: PrefixSum, HashMap, Arrays, Day3
-- Difficulty: Not labeled
+- Platform: LeetCode
+- Topic: Arrays / Prefix Sum
+- Tags: PrefixSum, HashMap, Arrays
+- Difficulty: Medium
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
 ## Problem Cue
 
-How to find the longest subarray whose sum equals k
-
-
-## Brief Problem Statement
-
-Given the problem setup, find an efficient way to find the longest subarray whose sum equals k.
+Given an integer array nums and an integer k, find the length of the longest continuous subarray whose sum equals k.
 
 ## Recognition Pattern
 
-- Topic signal: Arrays / Hashing
-- Pattern hint from tags: PrefixSum / HashMap
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- We are looking for the longest subarray, not just whether one exists.
+- Use prefix sums and a hashmap to remember the earliest index for each prefix sum.
+- When `currentSum - k` was seen before, a candidate subarray ending at the current index is found.
+- Keep the first index for each prefix sum to maximize length.
+
+## Brute Force Thought
+
+Enumerate all subarrays and compute their sums, tracking the maximum length when sum equals k.
+
+Why it is too slow:
+- O(n^2) subarrays to consider.
+- Summing each subarray directly makes the approach O(n^3), or O(n^2) even with precomputed prefix sums.
 
 ## Core Insight
 
-Keep map of prefixSum → first index. When (sum - k) seen before, update maxLen. Don’t override earlier indices.
+Use a running prefix sum and store the earliest index at which each prefix occurred. For each position, if `(sum - k)` has been seen, the subarray from its earliest occurrence + 1 to the current index has sum k. Since earlier occurrences maximize length, do not overwrite existing entries.
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Initialize `sum = 0`, `maxLen = 0`, and a map with `0 -> -1`.
+2. Iterate through `nums`, adding each value to `sum`.
+3. If `sum` is not already in the map, record the current index.
+4. If `(sum - k)` exists in the map, compute candidate length and update `maxLen`.
 
-## Thought Process During Solving
-
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
-
-## Java Skeleton
+## Java Solution
 ```java
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public int longestSubarray(int[] nums, int k) {
+        Map<Integer, Integer> firstIndexBySum = new HashMap<>();
+        firstIndexBySum.put(0, -1);
+
+        int sum = 0;
+        int maxLen = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+
+            firstIndexBySum.putIfAbsent(sum, i);
+
+            int target = sum - k;
+            if (firstIndexBySum.containsKey(target)) {
+                int candidateLen = i - firstIndexBySum.get(target);
+                if (candidateLen > maxLen) {
+                    maxLen = candidateLen;
+                }
+            }
+        }
+
+        return maxLen;
     }
 }
 ```
 
 ## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+- Time: `O(n)`
+- Space: `O(n)`
 
 ## Edge Cases / Traps
 
-- Check boundary conditions, duplicates, and empty input.
-- Verify the invariant or state after each update.
-- Confirm whether recursion, heap ordering, or index movement can fail.
+- `k = 0`: longest subarray of zeros or balanced sums.
+- Negative numbers: still works since prefix sums can decrease.
+- All positive numbers and no valid subarray: return `0`.
+- Multiple same prefix sum values: keep only the earliest index to maximize subarray length.
 
-## Promotion Checklist
+## Why This Works
 
-- Add a full Java solution.
-- Add exact time and space complexity.
-- Add one short brute-force vs optimized comparison.
-- Add 2-3 problem-specific traps.
+The prefix sum at index `i` equals the sum of `nums[0..i]`. If a previous prefix sum equals `sum - k`, the subarray after that previous index through `i` sums to k. Keeping the earliest index for each prefix ensures the longest possible subarray is measured.
+
+## Interview Explanation
+
+Maintain a running sum and a map of the first index where each sum occurred. For each element, check if `sum - k` has occurred before. If it has, the distance from that earliest occurrence to the current index is a valid subarray length. Update the maximum length accordingly.
+
+## Similar Problems
+
+- Subarray Sum Equals K
+- Count Subarrays Whose Sum Equals K
+- Longest Subarray with Sum at Most K
+
+## Anki Recall Prompts
+
+- Why do we store the first index of each prefix sum?
+- What does `sum - k` represent in this solution?
+- How does this method avoid checking every subarray?

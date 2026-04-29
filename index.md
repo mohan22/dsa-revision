@@ -4,7 +4,7 @@
 
 - Raw Anki entries represented: 247
 - Unique problem notes in repo: 244
-- Tier 1: 19 curated full-solution notes
+- Tier 1: 20 curated full-solution notes
 - Tier 2: 228 notes
 - Some overlapping Anki prompts are intentionally merged into the same canonical note when they cover the same problem.
 
@@ -31,6 +31,7 @@
 | [Move All Zeroes To End Maintaining Order](problems/move-all-zeroes-to-end-maintaining-order.md) | Arrays / Two Pointers | Two Pointers / In-place | New |
 | [Count Subarrays With Sum = K In Binary Array](problems/count-subarrays-with-sum-k-in-binary-array.md) | Arrays / Prefix Sum | Prefix Sum / HashMap | New |
 | [Count Subarrays Whose Sum Equals K](problems/count-subarrays-whose-sum-equals-k.md) | Arrays / Prefix Sum | Prefix Sum / HashMap | New |
+| [Find The Longest Subarray Whose Sum Equals K](problems/find-the-longest-subarray-whose-sum-equals-k.md) | Arrays / Prefix Sum | Prefix Sum / HashMap | New |
 
 ## Tier 2 Core Problems
 
