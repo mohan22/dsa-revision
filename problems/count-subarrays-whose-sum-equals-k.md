@@ -1,68 +1,96 @@
 # Problem: Count Subarrays Whose Sum Equals K
 
 ## Source
-- Platform: Anki deck seed
-- Topic: Arrays / Hashing
-- Tags: PrefixSum, HashMap, Arrays, Day3
-- Difficulty: Not labeled
+- Platform: LeetCode
+- Topic: Arrays / Prefix Sum
+- Tags: PrefixSum, HashMap, Arrays
+- Difficulty: Medium
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
 ## Problem Cue
 
-How to count subarrays whose sum equals k
-
-
-## Brief Problem Statement
-
-Given the problem setup, find an efficient way to count subarrays whose sum equals k.
+Given an integer array nums and an integer k, count the number of continuous subarrays whose sum equals k.
 
 ## Recognition Pattern
 
-- Topic signal: Arrays / Hashing
-- Pattern hint from tags: PrefixSum / HashMap
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- We need the number of subarrays with sum exactly k.
+- Use a prefix sum and frequency map to avoid checking all subarrays.
+- Suitable for arrays with positive, negative, or zero values.
+- HashMap stores previous prefix sums seen so far.
+
+## Brute Force Thought
+
+Enumerate all subarrays and compute their sums.
+
+Why it is too slow:
+- There are O(n^2) subarrays.
+- Summing each subarray from scratch can lead to O(n^3) total work.
+- Even with prefix sum lookup, checking every pair is O(n^2).
 
 ## Core Insight
 
-Maintain cumulative sum. For each index, if (sum - k) seen before, add its frequency to count. Initialize map[0] = 1.
+Compute the cumulative prefix sum while iterating. For each current prefix sum `sum`, any previous prefix sum equal to `sum - k` defines a subarray ending at the current index with sum k. Track frequencies of prefix sums in a HashMap.
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Initialize `sum = 0`, `count = 0`, and `prefixCount` map with `{0: 1}`.
+2. Iterate through `nums`, adding each value to `sum`.
+3. Check how many previous prefix sums equal `sum - k`; add their count to `count`.
+4. Update the map frequency for the current prefix sum.
 
-## Thought Process During Solving
-
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
-
-## Java Skeleton
+## Java Solution
 ```java
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> prefixCount = new HashMap<>();
+        prefixCount.put(0, 1);
+
+        int sum = 0;
+        int count = 0;
+
+        for (int num : nums) {
+            sum += num;
+            int needed = sum - k;
+            count += prefixCount.getOrDefault(needed, 0);
+            prefixCount.put(sum, prefixCount.getOrDefault(sum, 0) + 1);
+        }
+
+        return count;
     }
 }
 ```
 
 ## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+- Time: `O(n)`
+- Space: `O(n)`
 
 ## Edge Cases / Traps
 
-- Check boundary conditions, duplicates, and empty input.
-- Verify the invariant or state after each update.
-- Confirm whether recursion, heap ordering, or index movement can fail.
+- `k = 0`: Count subarrays where the sum is zero, including sequences of zeros.
+- Empty array: result should be `0`.
+- Negative numbers: prefix sum differences still work.
+- Multiple matching prefix sums: accumulate frequencies, not just existence.
 
-## Promotion Checklist
+## Why This Works
 
-- Add a full Java solution.
-- Add exact time and space complexity.
-- Add one short brute-force vs optimized comparison.
-- Add 2-3 problem-specific traps.
+The prefix sum at index `i` is the total of `nums[0..i]`. A subarray from `j+1` to `i` sums to `k` exactly when `prefix[i] - prefix[j] == k`. The hashmap stores how many times each prefix sum has occurred, so every valid `prefix[j]` contributes to the answer instantly.
+
+## Interview Explanation
+
+Use a running prefix sum and a hashmap of prefix sum frequencies. For each new element, compute `sum - k` and add the number of times that value has appeared before. Then update the current prefix sum frequency. This counts all subarrays whose sum equals k in one pass.
+
+## Similar Problems
+
+- Subarray Sum Equals K
+- Count Number of Nice Subarrays
+- Number of Subarrays with Sum K
+
+## Anki Recall Prompts
+
+- Why do we store prefix sum frequencies?
+- Why initialize the map with `{0: 1}`?
+- How does `sum - k` identify valid subarrays?
