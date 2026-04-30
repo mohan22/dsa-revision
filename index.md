@@ -4,7 +4,7 @@
 
 - Raw Anki entries represented: 247
 - Unique problem notes in repo: 244
-- Tier 1: 23 curated full-solution notes
+- Tier 1: 24 curated full-solution notes
 - Tier 2: 228 notes
 - Some overlapping Anki prompts are intentionally merged into the same canonical note when they cover the same problem.
 
@@ -36,6 +36,7 @@
 | [Find Number Of Submatrices With Sum = K](problems/find-number-of-submatrices-with-sum-k.md) | Matrix / Prefix Sum | Prefix Sum / HashMap | New |
 | [Find The Longest Subarray With Equal 0S And 1S](problems/find-the-longest-subarray-with-equal-0s-and-1s.md) | Arrays / Prefix Sum | Prefix Sum / HashMap | New |
 | [Check If There Exists Subarray Of Size ≥ 2 With Sum Multiple Of K](problems/check-if-there-exists-subarray-of-size-2-with-sum-multiple-of-k.md) | Arrays / Prefix Sum | Prefix Sum / Modulo | New |
+| [Find The Largest Rectangle In Histogram Efficiently](problems/find-the-largest-rectangle-in-histogram-efficiently.md) | Stack / Monotonic Stack | Monotonic Stack | New |
 
 ## Tier 2 Core Problems
 

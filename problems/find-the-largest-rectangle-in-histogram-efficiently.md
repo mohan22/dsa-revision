@@ -1,53 +1,106 @@
 # Problem: Find The Largest Rectangle In Histogram Efficiently
 
 ## Source
-- Platform: Anki deck seed
-- Topic: Stack
-- Tags: MonotonicStack, Stack, Hard, Day4
-- Difficulty: Not labeled
+- Platform: LeetCode
+- Topic: Stack / Monotonic Stack
+- Tags: MonotonicStack, Stack
+- Difficulty: Hard
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
 ## Problem Cue
 
-How to find the largest rectangle in histogram efficiently
-
-
-## Brief Problem Statement
-
-Given the problem setup, find an efficient way to find the largest rectangle in histogram efficiently.
+Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
 
 ## Recognition Pattern
 
-- Topic signal: Stack
-- Pattern hint from tags: MonotonicStack / Stack
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- Histogram bars with widths 1.
+- Need maximum area rectangle formed by bars.
+- Use monotonic stack to find for each bar, the largest rectangle with that bar as height.
+- Stack maintains indices in increasing height order.
+
+## Brute Force Thought
+
+For each bar, expand left and right until smaller bar found, compute area.
+
+Why it is too slow:
+- O(n^2) time, as each expansion can take O(n).
 
 ## Core Insight
 
-Use stack to maintain increasing bar heights. Pop when smaller bar found, compute area = height * width based on indices.
+Use a monotonic increasing stack of indices. For each bar, while stack top has taller bar, pop and compute area: height * (current index - stack top after pop - 1).
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Add a sentinel bar of height 0 at end.
+2. Use stack to store indices.
+3. For each bar, while stack not empty and current height < stack top height, pop and compute area.
+4. Push current index.
+5. After processing, pop remaining and compute areas.
 
 ## Thought Process During Solving
 
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
+1. What makes brute-force slow? Repeated expansions for each bar.
+2. Which data structure fixes it? Monotonic stack to compute left/right boundaries in O(1) amortized.
+3. What edge case breaks it? All increasing, all decreasing, single bar.
+4. Can I explain in 3-4 sentences? Use a stack to keep indices of increasing heights. When a smaller height is encountered, pop taller bars and calculate their areas using the width between current and previous smaller bar.
 
-## Java Skeleton
+## Java Solution
 ```java
+import java.util.Stack;
+
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public int largestRectangleArea(int[] heights) {
+        Stack<Integer> stack = new Stack<>();
+        int maxArea = 0;
+        int n = heights.length;
+
+        for (int i = 0; i <= n; i++) {
+            int h = (i == n) ? 0 : heights[i];
+            while (!stack.isEmpty() && h < heights[stack.peek()]) {
+                int height = heights[stack.pop()];
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+                maxArea = Math.max(maxArea, height * width);
+            }
+            stack.push(i);
+        }
+
+        return maxArea;
     }
 }
+```
+
+## Complexity
+- Time: `O(n)`
+- Space: `O(n)`
+
+## Edge Cases / Traps
+
+- All bars same height: Area = height * n
+- Strictly increasing: Each bar's area is height * 1
+- Strictly decreasing: Last bar's area is height * n
+- Single bar: Area = height
+- Empty array: 0
+
+## Why This Works
+
+The stack ensures for each popped bar, the left boundary is the previous stack top (or -1), right is current index. This gives the maximum width for that height.
+
+## Interview Explanation
+
+We use a monotonic stack to process bars from left to right. When we encounter a bar shorter than the stack top, we pop the taller bars and calculate their rectangle areas using the width from the new stack top to the current position. This efficiently finds the largest possible rectangle for each bar.
+
+## Similar Problems
+
+- Maximal Rectangle
+- Largest Rectangle in Histogram
+- Trapping Rain Water
+
+## Anki Recall Prompts
+
+- How does the stack maintain monotonic order?
+- What is the width calculation for a popped bar?
+- Why add a sentinel at the end?
 ```
 
 ## Complexity
