@@ -1,53 +1,116 @@
 # Problem: Calculate Trapped Rain Water Efficiently
 
 ## Source
-- Platform: Anki deck seed
-- Topic: Two Pointers / Sliding Window
-- Tags: TwoPointers, Arrays, Day2
-- Difficulty: Not labeled
+- Platform: LeetCode
+- Topic: Two Pointers / Arrays
+- Tags: TwoPointers, Arrays
+- Difficulty: Hard
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
 ## Problem Cue
 
-How to calculate trapped rain water efficiently
-
-
-## Brief Problem Statement
-
-Given the problem setup, find an efficient way to calculate trapped rain water efficiently.
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
 
 ## Recognition Pattern
 
-- Topic signal: Two Pointers / Sliding Window
-- Pattern hint from tags: TwoPointers / Arrays
-- Use this note to reconstruct the full solution before promoting it to Tier 1.
+- Elevation map with bars of width 1.
+- Water trapped between bars depends on min of max heights on left and right.
+- Two pointers approach: start from both ends, move inward.
+- Maintain maxLeft and maxRight as you go.
+
+## Brute Force Thought
+
+For each bar, find max height to left and right, trapped = min(maxLeft, maxRight) - height[i].
+
+Why it is too slow:
+- O(n^2) time, as finding max left/right for each bar takes O(n).
 
 ## Core Insight
 
-Use left/right pointers + maxLeft/maxRight heights. Move inward from both sides; add trapped = min(maxLeft, maxRight) - height[i]. O(n).
+Use two pointers: left=0, right=n-1. Track maxLeft and maxRight. Move the pointer with smaller max height inward, adding trapped water when current height < max.
 
 ## Solution Approach
 
-1. Restate the exact objective and input constraints.
-2. Identify the main pattern suggested by the tags and cue.
-3. Rebuild the optimized steps from the core insight above.
-4. Dry run the logic on one small example before coding.
+1. Initialize left=0, right=n-1, maxLeft=0, maxRight=0, trapped=0.
+2. While left < right:
+   - If height[left] < height[right], process left pointer.
+   - Else, process right pointer.
+   - For left: if height[left] > maxLeft, update maxLeft; else add maxLeft - height[left] to trapped.
+   - Similarly for right.
+3. Return trapped.
 
 ## Thought Process During Solving
 
-1. What makes the brute-force version slow here?
-2. Which data structure or invariant fixes that repeated work?
-3. What edge case is most likely to break the implementation?
-4. Can I explain the approach in 3-4 interview sentences?
+1. What makes brute-force slow? Repeated max computations.
+2. Which data structure fixes it? Two pointers with running maxes.
+3. What edge case breaks it? All increasing, all decreasing, flat.
+4. Can I explain in 3-4 sentences? Use two pointers from ends. Track max heights seen so far. Move the pointer with smaller max height, adding trapped water based on the difference.
 
-## Java Skeleton
+## Java Solution
 ```java
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public int trap(int[] height) {
+        if (height == null || height.length == 0) return 0;
+
+        int left = 0, right = height.length - 1;
+        int maxLeft = 0, maxRight = 0;
+        int trapped = 0;
+
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= maxLeft) {
+                    maxLeft = height[left];
+                } else {
+                    trapped += maxLeft - height[left];
+                }
+                left++;
+            } else {
+                if (height[right] >= maxRight) {
+                    maxRight = height[right];
+                } else {
+                    trapped += maxRight - height[right];
+                }
+                right--;
+            }
+        }
+
+        return trapped;
     }
 }
+```
+
+## Complexity
+- Time: `O(n)`
+- Space: `O(1)`
+
+## Edge Cases / Traps
+
+- No water trapped: strictly increasing or decreasing.
+- All same height: no water.
+- Single bar: 0 water.
+- Empty array: 0.
+- Water at ends: only trapped between higher bars.
+
+## Why This Works
+
+By moving the pointer with the smaller max height, we ensure we're always processing the limiting factor. The trapped water is correctly calculated as the difference between the current max and the bar height.
+
+## Interview Explanation
+
+We use two pointers starting from both ends of the array. We maintain the maximum heights seen from left and right. At each step, we move the pointer that has the smaller maximum height, and if the current bar is shorter than that maximum, we add the difference to the trapped water.
+
+## Similar Problems
+
+- Container With Most Water
+- Trapping Rain Water II
+- Largest Rectangle in Histogram
+
+## Anki Recall Prompts
+
+- Why move the pointer with smaller max height?
+- How is trapped water calculated at each step?
+- What happens when heights are equal?
 ```
 
 ## Complexity
