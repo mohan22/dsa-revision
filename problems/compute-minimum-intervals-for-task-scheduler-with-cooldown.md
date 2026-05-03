@@ -6,7 +6,7 @@
 - Tags: Greedy, PQ, Scheduling, Day16
 - Difficulty: Not labeled
 - Revision Status: New
-- Tier: Tier 2
+- Tier: Tier 1
 
 ## Problem Cue
 

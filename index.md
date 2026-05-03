@@ -4,8 +4,8 @@
 
 - Raw Anki entries represented: 247
 - Unique problem notes in repo: 244
-- Tier 1: 26 curated full-solution notes
-- Tier 2: 228 notes
+- Tier 1: 27 curated full-solution notes
+- Tier 2: 227 notes
 - Some overlapping Anki prompts are intentionally merged into the same canonical note when they cover the same problem.
 
 ## Tier 1 Problems
@@ -39,6 +39,7 @@
 | [Find The Largest Rectangle In Histogram Efficiently](problems/find-the-largest-rectangle-in-histogram-efficiently.md) | Stack / Monotonic Stack | Monotonic Stack | New |
 | [Calculate Trapped Rain Water Efficiently](problems/calculate-trapped-rain-water-efficiently.md) | Two Pointers / Arrays | Two Pointers | New |
 | [Shortest Cycle in a Graph](problems/shortest-cycle-in-a-graph.md) | Graph / BFS | BFS / Cycle Detection | New |
+| [Compute minimum intervals for Task Scheduler with cooldown](problems/compute-minimum-intervals-for-task-scheduler-with-cooldown.md) | Greedy | Greedy / PQ | New |
 
 ## Tier 2 Core Problems
 
@@ -100,7 +101,6 @@
 | [Compute Min Edits (Insert, Delete, Replace) To Convert String A→B](problems/compute-min-edits-insert-delete-replace-to-convert-string-ab.md) | Dynamic Programming | DynamicProgramming / Strings | New |
 | [Compute minimum coins to make amount (Coin Change)](problems/compute-minimum-coins-to-make-amount-coin-change.md) | Dynamic Programming | DP / Knapsack | New |
 | [Compute Minimum Falling Path Sum](problems/compute-minimum-falling-path-sum.md) | Dynamic Programming | DP / Grid | New |
-| [Compute minimum intervals for Task Scheduler with cooldown](problems/compute-minimum-intervals-for-task-scheduler-with-cooldown.md) | Greedy | Greedy / PQ | New |
 | [Compute Network Delay Time](problems/compute-network-delay-time.md) | Graph / Matrix | Graph / Dijkstra | New |
 | [Compute Product Of Array Except Self Without Division](problems/compute-product-of-array-except-self-without-division.md) | Arrays / Hashing | Arrays / PrefixProduct | New |
 | [Compute Sliding Window Median](problems/compute-sliding-window-median.md) | Heap / Priority Queue | Heap / Median | New |
