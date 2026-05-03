@@ -41,18 +41,37 @@ Greedy formula: max((maxFreq-1)*(n+1) + countMaxFreq, totalTasks). Alternative: 
 3. What edge case is most likely to break the implementation?
 4. Can I explain the approach in 3-4 interview sentences?
 
-## Java Skeleton
+## Java Solution
 ```java
 class Solution {
-    public void solve() {
-        // Fill in the final Java implementation during promotion to Tier 1.
+    public int leastInterval(char[] tasks, int n) {
+        int[] freq = new int[26];
+        int maxFreq = 0;
+
+        for (char task : tasks) {
+            maxFreq = Math.max(maxFreq, ++freq[task - 'A']);
+        }
+
+        int countMaxFreq = 0;
+        for (int f : freq) {
+            if (f == maxFreq) {
+                countMaxFreq++;
+            }
+        }
+
+        int intervals = (maxFreq - 1) * (n + 1) + countMaxFreq;
+        return Math.max(tasks.length, intervals);
     }
 }
 ```
 
 ## Complexity
-- Time: Derive during promotion
-- Space: Derive during promotion
+- Time: O(T + 26) = O(T), where T is the number of tasks
+- Space: O(1), since the frequency array size is fixed
+
+## Brute-force vs Optimized
+- Brute force simulates each time slot and tracks cooling status, which can be slow when tasks are many and cooldowns are large.
+- Optimized formula uses the most frequent task to bound the minimum schedule length and fills the rest with idle slots or other tasks.
 
 ## Edge Cases / Traps
 
