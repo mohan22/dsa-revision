@@ -101,16 +101,24 @@ public class StockTradingAppExample {
         }
     }
 
-    static class OrderBook {
-        private final String symbol;
+    interface OrderStorage {
+        void addOrder(Order order);
+        boolean removeOrder(String orderId);
+        Order getOrder(String orderId);
+        PriorityQueue<Order> getBuyOrders();
+        PriorityQueue<Order> getSellOrders();
+    }
+
+    interface OrderMatcher {
+        List<Trade> matchOrders(OrderStorage storage);
+    }
+
+    static class OrderBookStorage implements OrderStorage {
         private final PriorityQueue<Order> buyOrders;
         private final PriorityQueue<Order> sellOrders;
         private final Map<String, Order> orderMap;
-        private final List<Trade> trades;
-        private final AtomicLong tradeIdGenerator;
 
-        OrderBook(String symbol) {
-            this.symbol = symbol;
+        OrderBookStorage() {
             this.buyOrders = new PriorityQueue<>(Comparator
                     .<Order>comparingDouble(o -> o.price).reversed()
                     .thenComparingLong(o -> o.timestamp));
@@ -118,11 +126,10 @@ public class StockTradingAppExample {
                     .<Order>comparingDouble(o -> o.price)
                     .thenComparingLong(o -> o.timestamp));
             this.orderMap = new HashMap<>();
-            this.trades = new ArrayList<>();
-            this.tradeIdGenerator = new AtomicLong(1);
         }
 
-        synchronized void placeOrder(Order order) {
+        @Override
+        public void addOrder(Order order) {
             if (orderMap.containsKey(order.orderId)) {
                 throw new IllegalArgumentException("Duplicate order id: " + order.orderId);
             }
@@ -132,22 +139,53 @@ public class StockTradingAppExample {
             } else {
                 sellOrders.offer(order);
             }
-            matchOrders();
         }
 
-        synchronized boolean cancelOrder(String orderId) {
+        @Override
+        public boolean removeOrder(String orderId) {
             Order order = orderMap.get(orderId);
-            if (order == null || order.isFilled() || order.status == OrderStatus.CANCELLED) {
+            if (order == null) {
                 return false;
             }
             boolean removed = (order.side == OrderSide.BUY)
                     ? buyOrders.remove(order)
                     : sellOrders.remove(order);
-            order.cancel();
+            if (removed) {
+                order.cancel();
+            }
             return removed;
         }
 
-        private void matchOrders() {
+        @Override
+        public Order getOrder(String orderId) {
+            return orderMap.get(orderId);
+        }
+
+        @Override
+        public PriorityQueue<Order> getBuyOrders() {
+            return buyOrders;
+        }
+
+        @Override
+        public PriorityQueue<Order> getSellOrders() {
+            return sellOrders;
+        }
+    }
+
+    static class PriceTimeOrderMatcher implements OrderMatcher {
+        private final AtomicLong tradeIdGenerator = new AtomicLong(1);
+        private final String symbol;
+
+        PriceTimeOrderMatcher(String symbol) {
+            this.symbol = symbol;
+        }
+
+        @Override
+        public List<Trade> matchOrders(OrderStorage storage) {
+            List<Trade> trades = new ArrayList<>();
+            PriorityQueue<Order> buyOrders = storage.getBuyOrders();
+            PriorityQueue<Order> sellOrders = storage.getSellOrders();
+
             while (!buyOrders.isEmpty() && !sellOrders.isEmpty()) {
                 Order bestBuy = buyOrders.peek();
                 Order bestSell = sellOrders.peek();
@@ -158,7 +196,8 @@ public class StockTradingAppExample {
 
                 int executableQuantity = Math.min(bestBuy.remainingQuantity(), bestSell.remainingQuantity());
                 double executionPrice = determineExecutionPrice(bestBuy, bestSell);
-                createTrade(bestBuy, bestSell, executableQuantity, executionPrice);
+                Trade trade = createTrade(bestBuy, bestSell, executableQuantity, executionPrice);
+                trades.add(trade);
 
                 bestBuy.applyFill(executableQuantity);
                 bestSell.applyFill(executableQuantity);
@@ -170,6 +209,7 @@ public class StockTradingAppExample {
                     sellOrders.poll();
                 }
             }
+            return trades;
         }
 
         private boolean canMatch(Order buy, Order sell) {
@@ -192,10 +232,33 @@ public class StockTradingAppExample {
             return sell.price;
         }
 
-        private void createTrade(Order buy, Order sell, int quantity, double price) {
+        private Trade createTrade(Order buy, Order sell, int quantity, double price) {
             String tradeId = symbol + "-T" + tradeIdGenerator.getAndIncrement();
-            Trade trade = new Trade(tradeId, buy.orderId, sell.orderId, symbol, quantity, price, System.currentTimeMillis());
-            trades.add(trade);
+            return new Trade(tradeId, buy.orderId, sell.orderId, symbol, quantity, price, System.currentTimeMillis());
+        }
+    }
+
+    static class OrderBook {
+        private final String symbol;
+        private final OrderStorage storage;
+        private final OrderMatcher matcher;
+        private final List<Trade> trades;
+
+        OrderBook(String symbol, OrderStorage storage, OrderMatcher matcher) {
+            this.symbol = symbol;
+            this.storage = storage;
+            this.matcher = matcher;
+            this.trades = new ArrayList<>();
+        }
+
+        synchronized void placeOrder(Order order) {
+            storage.addOrder(order);
+            List<Trade> newTrades = matcher.matchOrders(storage);
+            trades.addAll(newTrades);
+        }
+
+        synchronized boolean cancelOrder(String orderId) {
+            return storage.removeOrder(orderId);
         }
 
         List<Trade> getTrades() {
@@ -205,7 +268,7 @@ public class StockTradingAppExample {
         @Override
         public String toString() {
             return String.format("OrderBook{%s, buy=%d, sell=%d, trades=%d}",
-                    symbol, buyOrders.size(), sellOrders.size(), trades.size());
+                    symbol, storage.getBuyOrders().size(), storage.getSellOrders().size(), trades.size());
         }
     }
 
@@ -213,7 +276,11 @@ public class StockTradingAppExample {
         private final Map<String, OrderBook> books = new HashMap<>();
 
         OrderBook getOrCreateBook(String symbol) {
-            return books.computeIfAbsent(symbol, OrderBook::new);
+            return books.computeIfAbsent(symbol, s -> {
+                OrderStorage storage = new OrderBookStorage();
+                OrderMatcher matcher = new PriceTimeOrderMatcher(s);
+                return new OrderBook(s, storage, matcher);
+            });
         }
 
         void placeOrder(Order order) {
