@@ -86,3 +86,48 @@ Maintain two price-priority order books per stock symbol, with a buy-side max-he
 
 ## Optional Code Sketch
 See `lld-problems/StockTradingAppExample.java` for a minimal implementation of the order book and matching engine.
+
+## UML Class Diagram
+
+```mermaid
+classDiagram
+  class Order {
+    - String orderId
+    - String symbol
+    - OrderSide side
+    - OrderType type
+    - int quantity
+    - double price
+    - int filledQuantity
+    - OrderStatus status
+    - long timestamp
+  }
+  class Trade {
+    - String tradeId
+    - String buyOrderId
+    - String sellOrderId
+    - String symbol
+    - int quantity
+    - double price
+    - long timestamp
+  }
+  class OrderBook {
+    - PriorityQueue~Order~ buyOrders
+    - PriorityQueue~Order~ sellOrders
+    - Map~String, Order~ orderMap
+    + placeOrder(Order)
+    + cancelOrder(String)
+    + matchOrders()
+    + getTopOfBook()
+  }
+  class OrderMatchingEngine {
+    - Map~String, OrderBook~ books
+    + placeOrder(Order)
+    + cancelOrder(String, String)
+    + getOrderBook(String)
+    + createTrade(...)
+  }
+  OrderMatchingEngine "1" o-- "*" OrderBook
+  OrderBook "1" o-- "*" Order
+  OrderBook "1" o-- "*" Trade
+```
