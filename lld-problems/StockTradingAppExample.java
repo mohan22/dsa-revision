@@ -1,5 +1,6 @@
 
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class StockTradingAppExample {
@@ -134,26 +135,25 @@ interface OrderMatcher {
 
 // --- Implementations ---
 class OrderBookStorage implements OrderStorage {
-    private final PriorityQueue<Order> buyOrders;
-    private final PriorityQueue<Order> sellOrders;
-    private final Map<String, Order> orderMap;
+    private final PriorityBlockingQueue<Order> buyOrders;
+    private final PriorityBlockingQueue<Order> sellOrders;
+    private final ConcurrentHashMap<String, Order> orderMap;
 
     OrderBookStorage() {
-        this.buyOrders = new PriorityQueue<>(Comparator
+        this.buyOrders = new PriorityBlockingQueue<>(11, Comparator
                 .<Order>comparingDouble(o -> o.price).reversed()
                 .thenComparingLong(o -> o.timestamp));
-        this.sellOrders = new PriorityQueue<>(Comparator
+        this.sellOrders = new PriorityBlockingQueue<>(11, Comparator
                 .<Order>comparingDouble(o -> o.price)
                 .thenComparingLong(o -> o.timestamp));
-        this.orderMap = new HashMap<>();
+        this.orderMap = new ConcurrentHashMap<>();
     }
 
     @Override
     public void addOrder(Order order) {
-        if (orderMap.containsKey(order.orderId)) {
+        if (orderMap.putIfAbsent(order.orderId, order) != null) {
             throw new IllegalArgumentException("Duplicate order id: " + order.orderId);
         }
-        orderMap.put(order.orderId, order);
         if (order.side == OrderSide.BUY) {
             buyOrders.offer(order);
         } else {
@@ -163,7 +163,7 @@ class OrderBookStorage implements OrderStorage {
 
     @Override
     public boolean removeOrder(String orderId) {
-        Order order = orderMap.get(orderId);
+        Order order = orderMap.remove(orderId);
         if (order == null) {
             return false;
         }
@@ -182,12 +182,12 @@ class OrderBookStorage implements OrderStorage {
     }
 
     @Override
-    public PriorityQueue<Order> getBuyOrders() {
+    public PriorityBlockingQueue<Order> getBuyOrders() {
         return buyOrders;
     }
 
     @Override
-    public PriorityQueue<Order> getSellOrders() {
+    public PriorityBlockingQueue<Order> getSellOrders() {
         return sellOrders;
     }
 }
@@ -263,6 +263,7 @@ class OrderBook {
     private final OrderStorage storage;
     private final OrderMatcher matcher;
     private final List<Trade> trades;
+    private final ReentrantLock lock = new ReentrantLock();
 
     OrderBook(String symbol, OrderStorage storage, OrderMatcher matcher) {
         this.symbol = symbol;
@@ -271,18 +272,33 @@ class OrderBook {
         this.trades = new ArrayList<>();
     }
 
-    synchronized void placeOrder(Order order) {
-        storage.addOrder(order);
-        List<Trade> newTrades = matcher.matchOrders(storage);
-        trades.addAll(newTrades);
+    void placeOrder(Order order) {
+        lock.lock();
+        try {
+            storage.addOrder(order);
+            List<Trade> newTrades = matcher.matchOrders(storage);
+            trades.addAll(newTrades);
+        } finally {
+            lock.unlock();
+        }
     }
 
-    synchronized boolean cancelOrder(String orderId) {
-        return storage.removeOrder(orderId);
+    boolean cancelOrder(String orderId) {
+        lock.lock();
+        try {
+            return storage.removeOrder(orderId);
+        } finally {
+            lock.unlock();
+        }
     }
 
     List<Trade> getTrades() {
-        return new ArrayList<>(trades);
+        lock.lock();
+        try {
+            return new ArrayList<>(trades);
+        } finally {
+            lock.unlock();
+        }
     }
 
     @Override
