@@ -91,6 +91,33 @@ See `lld-problems/StockTradingAppExample.java` for a minimal implementation of t
 
 ```mermaid
 classDiagram
+  %% Interfaces
+  class OrderStorage {
+    <<interface>>
+    +addOrder(Order)
+    +removeOrder(String)
+    +getOrder(String)
+    +getBuyOrders()
+    +getSellOrders()
+  }
+  class OrderMatcher {
+    <<interface>>
+    +matchOrders(OrderStorage)
+  }
+
+  %% Implementations
+  class OrderBookStorage {
+    +addOrder(Order)
+    +removeOrder(String)
+    +getOrder(String)
+    +getBuyOrders()
+    +getSellOrders()
+  }
+  class PriceTimeOrderMatcher {
+    +matchOrders(OrderStorage)
+  }
+
+  %% Domain Classes
   class Order {
     - String orderId
     - String symbol
@@ -112,21 +139,24 @@ classDiagram
     - long timestamp
   }
   class OrderBook {
-    - PriorityQueue~Order~ buyOrders
-    - PriorityQueue~Order~ sellOrders
-    - Map~String, Order~ orderMap
+    - OrderStorage storage
+    - OrderMatcher matcher
+    - List~Trade~ trades
     + placeOrder(Order)
     + cancelOrder(String)
-    + matchOrders()
-    + getTopOfBook()
+    + getTrades()
   }
   class OrderMatchingEngine {
     - Map~String, OrderBook~ books
     + placeOrder(Order)
     + cancelOrder(String, String)
     + getOrderBook(String)
-    + createTrade(...)
+    + getTrades(String)
   }
+
+  %% Relationships
+  OrderBookStorage ..|> OrderStorage
+  PriceTimeOrderMatcher ..|> OrderMatcher
   OrderMatchingEngine "1" o-- "*" OrderBook
   OrderBook "1" o-- "*" Order
   OrderBook "1" o-- "*" Trade
