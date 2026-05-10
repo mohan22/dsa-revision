@@ -2,6 +2,7 @@
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.*;
 
 public class StockTradingAppExample {
     public static void main(String[] args) {
@@ -125,8 +126,8 @@ interface OrderStorage {
     void addOrder(Order order);
     boolean removeOrder(String orderId);
     Order getOrder(String orderId);
-    PriorityQueue<Order> getBuyOrders();
-    PriorityQueue<Order> getSellOrders();
+    PriorityBlockingQueue<Order> getBuyOrders();
+    PriorityBlockingQueue<Order> getSellOrders();
 }
 
 interface OrderMatcher {
@@ -203,8 +204,8 @@ class PriceTimeOrderMatcher implements OrderMatcher {
     @Override
     public List<Trade> matchOrders(OrderStorage storage) {
         List<Trade> trades = new ArrayList<>();
-        PriorityQueue<Order> buyOrders = storage.getBuyOrders();
-        PriorityQueue<Order> sellOrders = storage.getSellOrders();
+        PriorityBlockingQueue<Order> buyOrders = storage.getBuyOrders();
+        PriorityBlockingQueue<Order> sellOrders = storage.getSellOrders();
 
         while (!buyOrders.isEmpty() && !sellOrders.isEmpty()) {
             Order bestBuy = buyOrders.peek();
@@ -309,7 +310,7 @@ class OrderBook {
 }
 
 class OrderMatchingEngine {
-    private final Map<String, OrderBook> books = new HashMap<>();
+    private final ConcurrentMap<String, OrderBook> books = new ConcurrentHashMap<>();
 
     OrderBook getOrCreateBook(String symbol) {
         return books.computeIfAbsent(symbol, s -> {
