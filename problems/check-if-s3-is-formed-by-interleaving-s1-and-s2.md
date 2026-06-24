@@ -8,75 +8,70 @@
 - Revision Status: New
 - Tier: Tier 1
 
-## Problem Description
+## Problem Cue
 
-**Interleaving String (LeetCode 97)**
-
-Given three strings `s1`, `s2`, and `s3`, determine whether `s3` is formed by an interleaving of `s1` and `s2`.
-
-An interleaving of two strings preserves the left-to-right order of characters from each string, but they may be interspersed. Return `true` if `s3` can be formed in this way, otherwise return `false`.
-
-**Constraints:**
-- `0 <= s1.length, s2.length <= 1000`
-- `s3.length == s1.length + s2.length`
-- `s1`, `s2`, `s3` contain only lowercase/uppercase letters and digits in this repo's examples.
-
-**Examples:**
-- `s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"` → `true`
-- `s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"` → `false`
+Given strings `s1`, `s2`, and `s3`, determine whether `s3` can be formed by interleaving `s1` and `s2` while preserving the relative order of characters from each source string.
 
 ## Recognition Pattern
 
-- **Signal**: Two-sequence interleaving — each position depends on prefixes of `s1` and `s2`.
-- **DP pattern**: 2D DP over lengths of `s1` and `s2`: `dp[i][j]` answers whether prefixes `s1[0..i-1]` and `s2[0..j-1]` interleave to form `s3[0..i+j-1]`.
-- **Subproblem**: `dp[i][j] = (dp[i-1][j] && s1[i-1]==s3[i+j-1]) || (dp[i][j-1] && s2[j-1]==s3[i+j-1])`.
+- Two-sequence interleaving: each position in `s3` depends on how far we have consumed `s1` and `s2`.
+- DP state is defined over prefix lengths of `s1` and `s2`.
+- Recurrence chooses the next char from `s1` or `s2` if it matches the next char from `s3`.
+
+## Brute Force Thought
+
+Try all ways to merge `s1` and `s2` into `s3`: choose whether each next `s3` char comes from `s1` or `s2`. This branches exponentially and is too slow for large strings.
 
 ## Core Insight
 
-Build a DP table where `dp[i][j]` is `true` if `s3[0..i+j-1]` can be formed by interleaving first `i` chars of `s1` and first `j` chars of `s2`.
+Define `dp[i][j]` as `true` when `s3[0..i+j-1]` can be formed by interleaving the first `i` chars of `s1` and the first `j` chars of `s2`.
 
-Transitions:
+Transition:
+- `dp[i][j]` is true if either:
+  - `dp[i-1][j]` is true and `s1.charAt(i-1) == s3.charAt(i+j-1)`
+  - `dp[i][j-1]` is true and `s2.charAt(j-1) == s3.charAt(i+j-1)`
 
-- If `s1[i-1] == s3[i+j-1]`, `dp[i][j] |= dp[i-1][j]`.
-- If `s2[j-1] == s3[i+j-1]`, `dp[i][j] |= dp[i][j-1]`.
-
-Base: `dp[0][0] = true`. Fill first row/column by matching prefixes.
+Base cases:
+- `dp[0][0] = true`
+- `dp[i][0] = dp[i-1][0] && s1.charAt(i-1) == s3.charAt(i-1)`
+- `dp[0][j] = dp[0][j-1] && s2.charAt(j-1) == s3.charAt(j-1)`
 
 ## Solution Approach
 
-1. **State definition**: `dp[i][j]` as defined above.
-2. **Initialization**: `dp[0][0] = true`. For `i>0`: `dp[i][0] = dp[i-1][0] && s1[i-1]==s3[i-1]`. For `j>0`: `dp[0][j] = dp[0][j-1] && s2[j-1]==s3[j-1]`.
-3. **Fill order**: iterate `i` from `0..len(s1)` and `j` from `0..len(s2)`.
-4. **Answer**: `dp[len(s1)][len(s2)]`.
-
-We can optimize space to O(min(len(s1), len(s2))) by rolling a single row.
+- Recursive approach / recurrence reasoning:
+  - `isInterleave(i, j)` means `s3[0..i+j-1]` can be formed from `s1[0..i-1]` and `s2[0..j-1]`.
+  - Recurse by consuming the next char from `s1` or `s2` when it matches the next `s3` char.
+- DP solution (memoization or bottom-up tabulation):
+  - Use a 2D table or a 1D rolling row to record which prefix pairs are feasible.
+- Space-optimized DP (when applicable):
+  - Reduce memory from `O(n*m)` to `O(m)` by storing only the current row and updating left-to-right.
 
 ## Thought Process During Solving
 
-1. **Brute-force** would try all merges of two strings — exponential in lengths.
-2. **DP** counts feasible prefix pairings and reuses results for larger prefixes.
-3. **Key traps**: mismatched total length, handling of empty prefixes, and early mismatches in prefix fill.
-4. **Interview pitch**: Use a 2D DP table where each cell means "can these prefixes interleave to form this prefix of s3?" and update from left/top based on character matches.
+1. Validate that `s1.length() + s2.length() == s3.length()`.
+2. Recognize that the problem is about prefix interleaving, not substring matching.
+3. Use DP to record whether each combination of prefix lengths can reach the corresponding prefix of `s3`.
+4. Optimize space only after the logic is correct: the current row depends only on the prior row and the immediate left cell.
 
 ## Java Solution
 
 ```java
 class Solution {
     public boolean isInterleave(String s1, String s2, String s3) {
-        if (s1.length() + s2.length() != s3.length()) return false;
+        if (s1.length() + s2.length() != s3.length()) {
+            return false;
+        }
 
         int n = s1.length();
         int m = s2.length();
         boolean[] dp = new boolean[m + 1];
 
         dp[0] = true;
-        // initialize first row (i = 0)
         for (int j = 1; j <= m; j++) {
             dp[j] = dp[j - 1] && s2.charAt(j - 1) == s3.charAt(j - 1);
         }
 
         for (int i = 1; i <= n; i++) {
-            // update dp[0] for current i (j = 0)
             dp[0] = dp[0] && s1.charAt(i - 1) == s3.charAt(i - 1);
             for (int j = 1; j <= m; j++) {
                 boolean fromS1 = dp[j] && s1.charAt(i - 1) == s3.charAt(i + j - 1);
@@ -91,35 +86,32 @@ class Solution {
 ```
 
 ## Complexity
-- **Time**: O(n * m), where n = `s1.length()`, m = `s2.length()`.
-- **Space**: O(m) with the optimized 1D DP (or O(n*m) for full 2D table).
+- Time: O(n * m), where `n = s1.length()` and `m = s2.length()`.
+- Space: O(m) with the optimized 1D DP, or O(n*m) with a full 2D table.
 
 ## Edge Cases / Traps
 
-1. **Length mismatch**: Immediately return false if `s3.length() != s1.length() + s2.length()`.
-2. **Empty strings**: Interleaving with empty string reduces to direct equality check.
-3. **Early mismatch**: If prefix characters don't match expected s3 positions, corresponding dp cells remain false and propagate.
-4. **Characters repeated in both strings**: DP handles it; ensure correct order of updates when optimizing space.
+- Length mismatch between `s3` and `s1 + s2`.
+- Empty `s1` or `s2` reduces to a direct equality check with `s3`.
+- Repeated characters in both strings mean there may be multiple valid interleavings; DP handles this by exploring both sources without duplication.
+- When optimizing space, update the row left-to-right so the left neighbor is still from the current row while the top neighbor is from the previous row.
 
-## Brute-Force vs Optimized
+## Why This Works
 
-**Brute-Force:** Try all ways to merge `s1` and `s2` (choose positions for characters of `s1`) — exponential combinations.
+Each `dp[i][j]` records whether a specific prefix pairing is feasible. The recurrence follows the natural choice between consuming the next char from `s1` or `s2`, and the table reuses prefix results to avoid exponential branching.
 
-**Optimized (DP):** Each prefix pair (`i`,`j`) is considered once; DP gives O(n*m) time.
+## Interview Explanation
 
-## Test Cases
+"Model the state as how many chars we have taken from each string, then check if the next target char can come from `s1` or `s2`. With DP, we avoid repeating prefix checks and solve the interleaving decision in O(n*m)."
 
-```java
-// True case
-assert new Solution().isInterleave("aabcc", "dbbca", "aadbbcbcac") == true;
+## Similar Problems
 
-// False case
-assert new Solution().isInterleave("aabcc", "dbbca", "aadbbbaccc") == false;
+- Unique Paths
+- Subsequence DP with two sources
+- Classic 2D DP on prefix pairs
 
-// Empty components
-assert new Solution().isInterleave("", "", "") == true;
-assert new Solution().isInterleave("abc", "", "abc") == true;
+## Anki Recall Prompts
 
-// Different total length
-assert new Solution().isInterleave("a", "b", "abx") == false;
-```
+- What is the DP state for the interleaving string problem?
+- How do you initialize the first row and column for `s1` and `s2`?
+- When can the 2D interleaving DP be reduced to one row?

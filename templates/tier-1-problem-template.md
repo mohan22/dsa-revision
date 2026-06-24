@@ -18,6 +18,10 @@
 
 ## Solution Approach
 
+- Recursive approach / recurrence reasoning
+- DP solution (memoization or bottom-up tabulation)
+- Space-optimized DP (when applicable)
+
 ## Thought Process During Solving
 
 ## Java Solution
