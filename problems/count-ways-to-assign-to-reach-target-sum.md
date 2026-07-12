@@ -32,7 +32,8 @@ Let `total = sum(nums)`. If `total + target` is odd or negative, the answer is 0
 This becomes a standard 0/1 subset-sum counting DP.
 
 ## Solution Approach
-
+- Refer this for details thought process
+  - https://chatgpt.com/g/g-p-68e151323380819192e7a0bcfb513069-test/c/6a5393ca-3fc8-83e8-8e15-b1b31366cf98
 - Recursive approach / recurrence reasoning:
   - `count(i, remaining)` returns the number of ways to form `remaining` using the first `i` numbers.
   - At each step, either skip the number or include it.
